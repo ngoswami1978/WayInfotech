@@ -1,0 +1,99 @@
+<%@ Page Language="VB" AutoEventWireup="false" CodeFile="MSSR_1Aoffice.aspx.vb" Inherits="Setup_MSSR_1Aoffice" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>AAMS: Employee</title>
+    <link href="../CSS/AAMS.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <table width="800" border="0" align="left" cellpadding="0" cellspacing="0" class="tdborderspace" bgcolor="#FFFFFF">
+            <tr>
+                <td>
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tdborder">
+                        <tr>
+                            <td bgcolor="#1A61A9" class="heading">
+                                <div align="center" class="textbold">
+                                    Search Aoffice</div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="height: 19px">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td>
+                            </td>
+                            <td>
+                                <table width="98%" border="0" cellpadding="0" cellspacing="0" class="redborder">
+                                    <tr>
+                                        <td width="84%">
+                                            <table width="100%" border="0" align="left" cellpadding="2" cellspacing="0">
+                                                <tr>
+                                                    <td colspan="6" height="9">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="4%" class="textbold" style="height: 28px">
+                                                        &nbsp;</td>
+                                                    <td width="15%" class="textbold" style="height: 28px">
+                                                        Aoffice&nbsp;<span class="MandatoryColor"></span>  </td>
+                                                    <td colspan="3" style="height: 28px">
+                                                        <input name="textfield" type="text" class="textfield" id="txtAofficeCode"
+                                                            value="Del" /><span class="textbold"></span></td>
+                                                    <td width="18%" style="height: 28px">
+                                                        <input name="button" type="submit" class="button" id="btnSave" value="Search" style="width: 75px" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="textbold" style="height: 28px" width="4%">
+                                                    </td>
+                                                    <td class="textbold" style="height: 28px" width="15%">
+                                                    </td>
+                                                    <td colspan="3" style="height: 28px">
+                                                    </td>
+                                                    <td style="height: 28px" width="18%">
+                                                        <input name="button" type="submit" class="button" id="Submit1" value="New" style="width: 75px" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="textbold" style="height: 28px" width="4%">
+                                                    </td>
+                                                    <td class="textbold" style="height: 28px" width="15%">
+                                                    </td>
+                                                    <td colspan="3" style="height: 28px">
+                                                    </td>
+                                                    <td style="height: 28px" width="18%">
+                                                        <input name="button" type="submit" class="button" id="Submit2" value="Reset" style="width: 75px" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="textbold" style="height: 28px" width="4%">
+                                                    </td>
+                                                    <td class="textbold" colspan="4" style="height: 28px">
+                                                        <strong>Field Marked * are Mandoatry</strong> &nbsp;</td>
+                                                    <td style="height: 28px" width="18%">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="6">
+                                                        &nbsp;<span class="red"></span>&nbsp;</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                </td>
+                        </tr>
+                    </table>
+                    </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

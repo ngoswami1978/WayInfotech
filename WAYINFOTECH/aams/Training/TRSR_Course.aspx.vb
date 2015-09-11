@@ -1,0 +1,459 @@
+
+Partial Class Training_TRSR_Course
+    Inherits System.Web.UI.Page
+
+#Region "Global Variable Declarations."
+    Dim objeAAMS As New eAAMS
+    Dim objED As New EncyrptDeCyrpt
+    Dim objeAAMSMessage As New eAAMSMessage
+    Public strBuilder As New StringBuilder
+#End Region
+
+#Region "Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load"
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+        Try
+            Dim strurl As String = Request.Url.ToString()
+            Session("PageName") = strurl
+            ' Checking security.
+            CheckSecurity()
+            If Not IsPostBack Then
+                txtCourse.Focus()
+                objeAAMS.BindDropDown(ddlLevel, "COURSELEVEL", True, 3)
+
+            End If
+            '   Deleting records.
+            If (hdCourseId.Value <> "") Then
+                DeleteRecords()
+            End If
+        Catch ex As Exception
+            lblError.Text = ex.Message
+        End Try
+    End Sub
+#End Region
+
+#Region "btnNew_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnNew.Click"
+    Protected Sub btnNew_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnNew.Click
+        Response.Redirect("TRUP_Course.aspx?Action=I")
+    End Sub
+#End Region
+
+#Region "btnSearch_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnSearch.Click"
+    Protected Sub btnSearch_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnSearch.Click
+        Try
+            BindData(PageOperation.Search)
+        Catch ex As Exception
+            lblError.Text = ex.Message
+        End Try
+    End Sub
+#End Region
+
+#Region "btnReset_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnReset.Click"
+    Protected Sub btnReset_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnReset.Click
+        Response.Redirect("TRSR_Course.aspx")
+    End Sub
+#End Region
+
+#Region "BindData()"
+    Private Sub BindData(ByVal Operation As Integer)
+        Dim objInputXml, objOutputXml As New XmlDocument
+        Dim objXmlReader As XmlNodeReader
+        Dim ds As New DataSet
+        Dim objCourse As New AAMS.bizTraining.bzCourse
+        Try
+            objInputXml.LoadXml("<TR_SEARCH_COURSE_INPUT><TR_COURSE_NAME /><TR_COURSELEVEL_ID /><ShowOnWeb /><PAGE_NO/> <PAGE_SIZE/><SORT_BY/><DESC/></TR_SEARCH_COURSE_INPUT>")
+
+            objInputXml.DocumentElement.SelectSingleNode("TR_COURSE_NAME").InnerText = txtCourse.Text.Trim()
+            objInputXml.DocumentElement.SelectSingleNode("TR_COURSELEVEL_ID").InnerText = ddlLevel.SelectedValue
+            If chkShowOnWeb.Checked = True Then
+                objInputXml.DocumentElement.SelectSingleNode("ShowOnWeb").InnerText = "1"
+            Else
+                objInputXml.DocumentElement.SelectSingleNode("ShowOnWeb").InnerText = ""
+            End If
+
+            'Start CODE for sorting and paging
+            If Operation = PageOperation.Search Then
+
+                If ViewState("PrevSearching") Is Nothing Then
+                    objInputXml.DocumentElement.SelectSingleNode("PAGE_NO").InnerText = IIf(ddlPageNumber.Items.Count = 0, "1", ddlPageNumber.SelectedValue)
+                Else
+                    Dim objTempInputXml As New XmlDocument
+                    Dim objNodeList As XmlNodeList
+
+                    objTempInputXml.LoadXml(ViewState("PrevSearching"))
+                    objNodeList = objTempInputXml.DocumentElement.ChildNodes
+                    objInputXml.DocumentElement.SelectSingleNode("PAGE_NO").InnerText = IIf(ddlPageNumber.Items.Count = 0, "1", ddlPageNumber.SelectedValue)
+                    For Each objNode As XmlNode In objNodeList
+                        If objNode.Name <> "PAGE_NO" And objNode.Name <> "SORT_BY" And objNode.Name <> "DESC" And objNode.Name <> "PAGE_SIZE" Then
+                            If objNode.InnerText <> objInputXml.DocumentElement.SelectSingleNode(objNode.Name.ToString).InnerText Then
+                                objInputXml.DocumentElement.SelectSingleNode("PAGE_NO").InnerText = "1"
+                                ddlPageNumber.SelectedValue = "1"
+                            End If
+                        End If
+                    Next
+                End If
+
+
+                objInputXml.DocumentElement.SelectSingleNode("PAGE_SIZE").InnerText = ConfigurationManager.AppSettings("PAGE_SIZE").ToString
+
+
+                If ViewState("SortName") Is Nothing Then
+                    ViewState("SortName") = "TR_COURSE_NAME"
+                    objInputXml.DocumentElement.SelectSingleNode("SORT_BY").InnerText = "TR_COURSE_NAME" '"LOCATION_CODE"
+                Else
+                    objInputXml.DocumentElement.SelectSingleNode("SORT_BY").InnerText = ViewState("SortName")
+                End If
+
+                If ViewState("Desc") Is Nothing Then
+                    ViewState("Desc") = "FALSE"
+                    objInputXml.DocumentElement.SelectSingleNode("DESC").InnerText = "FALSE"
+                Else
+                    objInputXml.DocumentElement.SelectSingleNode("DESC").InnerText = ViewState("Desc")
+                End If
+            End If
+            'End Code for paging and sorting
+
+            objOutputXml = objCourse.Search(objInputXml)
+            If objOutputXml.DocumentElement.SelectSingleNode("Errors").Attributes("Status").Value.ToUpper = "FALSE" Then
+                ViewState("PrevSearching") = objInputXml.OuterXml
+                If Operation = PageOperation.Export Then
+                    Export(objOutputXml)
+                    Exit Sub
+                End If
+                objXmlReader = New XmlNodeReader(objOutputXml)
+                ds.ReadXml(objXmlReader)
+                If ds.Tables("COURSE").Rows.Count <> 0 Then
+                    gvCourse.DataSource = ds.Tables("COURSE")
+                    gvCourse.DataBind()
+
+                    'Code Added For Paging And Sorting In case Of Delete The Record
+                    pnlPaging.Visible = True
+                    Dim count As Integer = CInt(objOutputXml.DocumentElement.SelectSingleNode("PAGE").Attributes("PAGE_COUNT").Value)
+                    Dim selectedValue As String = IIf(ddlPageNumber.SelectedValue = "", "1", ddlPageNumber.SelectedValue)
+                    If count <> ddlPageNumber.Items.Count Then
+                        ddlPageNumber.Items.Clear()
+                        For i As Integer = 1 To count
+                            ddlPageNumber.Items.Add(i.ToString)
+                        Next
+                    End If
+                    ddlPageNumber.SelectedValue = selectedValue
+                    'Code for hiding prev and next button based on count
+                    If count = 1 Then
+                        'pnlPaging.Visible = False
+                        ' ddlPageNumber.Visible = False
+                        lnkNext.Visible = False
+                        lnkPrev.Visible = False
+                    Else
+                        'ddlPageNumber.Visible = True
+                        lnkPrev.Visible = True
+                        lnkNext.Visible = True
+                    End If
+
+                    'Code for hiding next button when pagenumber is equal to page count
+                    If ddlPageNumber.SelectedValue = count.ToString Then
+                        lnkNext.Visible = False
+                    Else
+                        lnkNext.Visible = True
+                    End If
+
+                    'Code for hiding prev button when pagenumber is 1
+                    If ddlPageNumber.SelectedValue = "1" Then
+                        lnkPrev.Visible = False
+                    Else
+                        lnkPrev.Visible = True
+                    End If
+                    hdRecordOnCurrentPage.Value = ds.Tables("COURSE").Rows.Count.ToString
+                    txtTotalRecordCount.Text = objOutputXml.DocumentElement.SelectSingleNode("PAGE").Attributes("TOTAL_ROWS").Value
+
+                    ' @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                    ' @ Added Code To Show Image'
+                    'Dim imgUp As New Image
+                    'imgUp.ImageUrl = "~/Images/Sortup.gif"
+                    'Dim imgDown As New Image
+                    'imgDown.ImageUrl = "~/Images/Sortdown.gif"
+
+                    'Select Case ViewState("SortName")
+                    '    Case "TR_COURSE_NAME"
+                    '        Select Case ViewState("Desc")
+                    '            Case "FALSE"
+                    '                gvCourse.HeaderRow.Cells(0).Controls.Add(imgUp)
+                    '            Case "TRUE"
+                    '                gvCourse.HeaderRow.Cells(0).Controls.Add(imgDown)
+                    '        End Select
+                    '    Case "TR_COURSELEVEL_NAME"
+                    '        Select Case ViewState("Desc")
+                    '            Case "FALSE"
+                    '                gvCourse.HeaderRow.Cells(1).Controls.Add(imgUp)
+                    '            Case "TRUE"
+                    '                gvCourse.HeaderRow.Cells(1).Controls.Add(imgDown)
+                    '        End Select
+                    '    Case "TR_COURSE_DURATION"
+                    '        Select Case ViewState("Desc")
+                    '            Case "FALSE"
+                    '                gvCourse.HeaderRow.Cells(2).Controls.Add(imgUp)
+                    '            Case "TRUE"
+                    '                gvCourse.HeaderRow.Cells(2).Controls.Add(imgDown)
+
+                    '        End Select
+                    'End Select
+
+                    SetImageForSorting(gvCourse)
+                    '  Added Code To Show Image'
+
+                    ' End of Code Added For Paging And Sorting In case Of Delete The Record
+                Else
+                    gvCourse.DataSource = Nothing
+                    gvCourse.DataBind()
+                    txtTotalRecordCount.Text = "0"
+                    hdRecordOnCurrentPage.Value = "0"
+                    pnlPaging.Visible = False
+                End If
+
+            Else
+                txtTotalRecordCount.Text = "0"
+                hdRecordOnCurrentPage.Value = "0"
+                pnlPaging.Visible = False
+                lblError.Text = objOutputXml.DocumentElement.SelectSingleNode("Errors/Error").Attributes("Description").Value
+            End If
+        Catch ex As Exception
+            lblError.Text = ex.Message.ToString
+        Finally
+            objInputXml = Nothing
+            objOutputXml = Nothing
+        End Try
+    End Sub
+#End Region
+
+    Private Sub SetImageForSorting(ByVal grd As GridView)
+        Dim imgUp As New Image
+        imgUp.ImageUrl = "~/Images/Sortup.gif"
+        Dim imgDown As New Image
+        imgDown.ImageUrl = "~/Images/Sortdown.gif"
+        Dim field As DataControlField
+        For Each field In grd.Columns
+            If field.SortExpression = ViewState("SortName").ToString().Trim() Then
+                Dim intcol As Integer = grd.Columns.IndexOf(field)
+                If ViewState("Desc") = "FALSE" Then
+                    grd.HeaderRow.Cells(intcol).Controls.Add(imgUp)
+                End If
+                If ViewState("Desc") = "TRUE" Then
+                    grd.HeaderRow.Cells(intcol).Controls.Add(imgDown)
+                End If
+            End If
+        Next
+    End Sub
+
+#Region "DeleteRecords()"
+    Private Sub DeleteRecords()
+        Try
+            Dim objInputXml, objOutputXml As New XmlDocument
+            Dim objCourse As New AAMS.bizTraining.bzCourse
+            If hdCourseId.Value <> "" Then
+                objInputXml.LoadXml("<TR_DELETE_COURSE_INPUT><TR_COURSE_ID></TR_COURSE_ID></TR_DELETE_COURSE_INPUT>")
+                objInputXml.DocumentElement.SelectSingleNode("TR_COURSE_ID").InnerText = hdCourseId.Value
+                hdCourseId.Value = ""
+                objOutputXml = objCourse.Delete(objInputXml)
+                BindData(PageOperation.Search)
+                If objOutputXml.DocumentElement.SelectSingleNode("Errors").Attributes("Status").Value.ToUpper = "FALSE" Then
+                    lblError.Text = objeAAMSMessage.messDelete
+                Else
+                    lblError.Text = objOutputXml.DocumentElement.SelectSingleNode("Errors/Error").Attributes("Description").Value
+                End If
+            End If
+        Catch ex As Exception
+            lblError.Text = ex.Message
+        End Try
+    End Sub
+#End Region
+
+#Region "CheckSecurity()::This method is used for security check."
+    Private Sub CheckSecurity()
+        Try
+            ' This code is used for checking session handler according to user login.
+            If Session("Security") Is Nothing Then
+                ClientScript.RegisterStartupScript(Me.GetType(), "loginScript", objeAAMS.CheckSession())
+            End If
+
+            Dim objSecurityXml As New XmlDocument
+            objSecurityXml.LoadXml(Session("Security"))
+            If (objSecurityXml.DocumentElement.SelectSingleNode("Administrator").InnerText = "0") Then
+                If objSecurityXml.DocumentElement.SelectNodes("SECURITY_OPTIONS/SECURITY_OPTION[@SecurityOptionSubName='Course']").Count <> 0 Then
+                    strBuilder = objeAAMS.SecurityCheck(objSecurityXml.DocumentElement.SelectSingleNode("SECURITY_OPTIONS/SECURITY_OPTION[@SecurityOptionSubName='Course']").Attributes("Value").Value)
+                End If
+                If strBuilder(0) = "0" Then
+                    Response.Redirect("../NoRights.aspx")
+                    btnSearch.Enabled = False
+                End If
+                If strBuilder(1) = "0" Then
+                    btnNew.Enabled = False
+                End If
+                If strBuilder(4) = "0" Then
+                    btnExport.Enabled = False
+                End If
+
+            Else
+                strBuilder = objeAAMS.SecurityCheck(31)
+            End If
+        Catch ex As Exception
+            lblError.Text = ex.Message
+        End Try
+    End Sub
+#End Region
+
+#Region "gvCourse_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles gvCourse.RowDataBound"
+    Protected Sub gvCourse_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles gvCourse.RowDataBound
+        Try
+            If e.Row.RowIndex < 0 Then
+                Exit Sub
+            End If
+            ' e.Row.Cells(2).Text = CInt(e.Row.Cells(2).Text)
+            '************* Code for edit link ****************************************************************
+            Dim lnkSelect As LinkButton
+            'Dim hdSelect As HiddenField
+            'hdSelect = (CType(e.Row.FindControl("hdSelect"), HiddenField))
+            lnkSelect = e.Row.FindControl("lnkSelect")
+            If (Request.QueryString("PopUp")) Is Nothing Then
+                lnkSelect.Visible = False
+            Else
+                lnkSelect.Visible = True
+                lnkSelect.Attributes.Add("OnClick", "return SelectFunction('" & lnkSelect.CommandArgument & "');")
+            End If
+
+
+            Dim hdContactID As HiddenField
+            Dim btnEdit As LinkButton
+            hdContactID = CType(e.Row.FindControl("hdCourse"), HiddenField)
+            btnEdit = CType(e.Row.FindControl("lnkEdit"), LinkButton)
+            ' btnEdit.Attributes.Add("OnClick", "javascript:return Edit('" + hdContactID.Value + "');")
+            '************* end code for edit ***************************************************************** 
+
+            '************* Code for Delete link ****************************************************************
+            Dim btnDelete As LinkButton
+            btnDelete = CType(e.Row.FindControl("lnkDelete"), LinkButton)
+            ' btnDelete.Attributes.Add("OnClick", "javascript:return Delete('" + hdContactID.Value + "');")
+            '************* end code for delete link ***************************************************************** 
+            Dim objSecurityXml As New XmlDocument
+            objSecurityXml.LoadXml(Session("Security"))
+            If (objSecurityXml.DocumentElement.SelectSingleNode("Administrator").InnerText = "0") Then
+                If objSecurityXml.DocumentElement.SelectNodes("SECURITY_OPTIONS/SECURITY_OPTION[@SecurityOptionSubName='Course']").Count <> 0 Then
+                    strBuilder = objeAAMS.SecurityCheck(objSecurityXml.DocumentElement.SelectSingleNode("SECURITY_OPTIONS/SECURITY_OPTION[@SecurityOptionSubName='Course']").Attributes("Value").Value)
+                End If
+                If strBuilder(3) = "0" Then
+                    btnDelete.Enabled = False
+                Else
+                    btnDelete.Attributes.Add("OnClick", "javascript:return Delete('" + hdContactID.Value + "');")
+                End If
+                'If strBuilder(2) = "0" Then
+                '    btnEdit.Enabled = False
+                'Else
+                '    btnEdit.Attributes.Add("OnClick", "javascript:return Edit('" + hdContactID.Value + "');")
+                'End If
+                'lnkSelect.Attributes.Add("OnClick", "return SelectFunction('" & lnkSelect.CommandArgument & "');")
+                btnEdit.Attributes.Add("OnClick", "javascript:return Edit('" + objED.Encrypt(hdContactID.Value) + "');")
+            Else
+                lnkSelect.Attributes.Add("OnClick", "return SelectFunction('" & lnkSelect.CommandArgument & "');")
+                btnEdit.Attributes.Add("OnClick", "javascript:return Edit('" + objED.Encrypt(hdContactID.Value) + "');")
+                btnDelete.Attributes.Add("OnClick", "javascript:return Delete('" + hdContactID.Value + "');")
+            End If
+        Catch ex As Exception
+            lblError.Text = ex.Message
+        End Try
+    End Sub
+#End Region
+
+#Region "Code for Paging And sorting."
+    Protected Sub lnkPrev_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles lnkPrev.Click
+        Try
+            If ddlPageNumber.SelectedValue <> "1" Then
+                ddlPageNumber.SelectedValue = (CInt(ddlPageNumber.SelectedValue) - 1).ToString
+            End If
+            BindData(PageOperation.Search)
+        Catch ex As Exception
+            lblError.Text = ex.Message
+        End Try
+    End Sub
+
+    Protected Sub lnkNext_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles lnkNext.Click
+        Try
+            If ddlPageNumber.SelectedValue <> (ddlPageNumber.Items.Count).ToString Then
+                ddlPageNumber.SelectedValue = (CInt(ddlPageNumber.SelectedValue) + 1).ToString
+            End If
+            BindData(PageOperation.Search)
+        Catch ex As Exception
+            lblError.Text = ex.Message
+        End Try
+    End Sub
+
+    Protected Sub ddlPageNumber_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ddlPageNumber.SelectedIndexChanged
+        Try
+            BindData(PageOperation.Search)
+        Catch ex As Exception
+            lblError.Text = ex.Message
+        End Try
+    End Sub
+
+   
+
+    Protected Sub gvCourse_Sorted(ByVal sender As Object, ByVal e As System.EventArgs) Handles gvCourse.Sorted
+        Try
+
+        Catch ex As Exception
+            lblError.Text = ex.Message
+        End Try
+    End Sub
+
+    Protected Sub gvCourse_Sorting(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewSortEventArgs) Handles gvCourse.Sorting
+        Try
+
+
+            Dim SortName As String = e.SortExpression
+            If ViewState("SortName") Is Nothing Then
+                ViewState("SortName") = SortName
+                ViewState("Desc") = "FALSE"
+            Else
+                If ViewState("SortName") = SortName Then
+                    If ViewState("Desc") = "TRUE" Then
+                        ViewState("Desc") = "FALSE"
+                    Else
+                        ViewState("Desc") = "TRUE"
+                    End If
+                Else
+                    ViewState("SortName") = SortName
+                    ViewState("Desc") = "FALSE"
+                End If
+            End If
+            BindData(PageOperation.Search)
+        Catch ex As Exception
+            lblError.Text = ex.Message
+        End Try
+    End Sub
+#End Region
+
+    Protected Sub btnExport_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnExport.Click
+        Try
+            BindData(PageOperation.Export)
+        Catch ex As Exception
+            lblError.Text = ex.Message
+        End Try
+
+    End Sub
+    Enum PageOperation
+        Search = 1
+        Export = 2
+    End Enum
+    Sub Export(ByVal objOutputXml As XmlDocument)
+        Dim objExport As New ExportExcel
+        Dim strArray() As String = {"Course", "Level", "Duration"}
+        Dim intArray() As Integer = {1, 2, 3}
+        objExport.ExportDetails(objOutputXml, "COURSE", intArray, strArray, ExportExcel.ExportFormat.Excel, "exportCOURSE.xls")
+    End Sub
+#Region "Page Filter()"
+    Protected Sub Page_PreRender(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.PreRender
+        If ConfigurationManager.AppSettings("PAGE_FILTER").ToString = "1" Then
+            If Response.ContentType = "text/html" Then
+                Response.Filter = New TrimStream(Response.Filter)
+            End If
+        End If
+    End Sub
+#End Region
+End Class

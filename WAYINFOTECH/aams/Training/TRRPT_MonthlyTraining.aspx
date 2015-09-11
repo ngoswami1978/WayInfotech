@@ -1,0 +1,441 @@
+<%@ Page Language="VB" AutoEventWireup="false" CodeFile="TRRPT_MonthlyTraining.aspx.vb" Inherits="Training_TRRPT_MonthlyTraining" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <link href="../CSS/AAMS.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" media="all" href="../Calender/calendar-blue.css" title="win2k-cold-1" />
+<script type="text/javascript" src="../Calender/calendar.js"></script>
+<script type="text/javascript" src="../JavaScript/AAMS.js"></script>
+
+<!-- import the language module -->
+
+<script type="text/javascript" src="../Calender/lang/calendar-en.js"></script>
+<script type="text/javascript" src="../Calender/calendar-setup.js"></script>
+    <title>AAMS::Training::Monthly Training Report</title>
+    <script language="javascript" type="text/javascript">
+    function GroupWholeChk()
+    {
+   
+    try
+    {
+            if(document.getElementById("txtAgency").value=='')
+            {
+                document.getElementById("chkWholeG").checked=false;
+                document.getElementById("chkWholeG").disabled =true;
+            }
+            else
+            {
+                 if(document.getElementById("hdtxtAgencyName").value.trim()==document.getElementById("txtAgency").value.trim())
+                {
+                document.getElementById("chkWholeG").disabled =false;
+                }
+                else
+                {
+                
+                document.getElementById("hdCourseLCode").value='';
+                document.getElementById("hdtxtAgencyName").value='';
+                document.getElementById("chkWholeG").checked=false;
+                document.getElementById("chkWholeG").disabled =true;
+            }
+            
+            }
+            
+        }
+      catch(err){}
+       
+    }
+    
+    
+     function LcodeReset(e)
+    {
+
+    var codes=e.KeyCode;
+    
+    if(document.getElementById("hdtxtAgencyName").value!='')
+    {
+           
+            
+    }
+    
+    }
+    
+    
+    
+      function EditFunction(CourseSessionID)
+			{
+				 window.location.href="TRUP_CourseSession.aspx?Action=U&CourseSessionID=" +CourseSessionID
+				 return false;
+			}
+			
+	function DeleteFunction(CourseSessionID)
+	{
+		 			 
+		 if (confirm("Are you sure you want to delete?")==true)
+            {    
+               document.getElementById('<%=hdDeleteID.ClientId%>').value = CourseSessionID
+               return true;        
+            }
+            return false;
+	}
+
+ function SelectFunction(ID,course,trainingRoom,startDate,maxParticipant,TRAINER1,CourseLevel)
+        {           
+        
+         if (window.opener.document.forms['form1']['hdCourseSessionFeedBack']!=null)
+        { 
+        window.opener.document.forms['form1']['hdCourseSessionFeedBack'].value=ID
+        window.opener.document.forms['form1']['txtCourseTitleFeedBack'].value=course
+        window.opener.document.forms['form1']['txtTrainingRoomFeedBack'].value=trainingRoom
+        window.opener.document.forms['form1']['txtStartDateFeedBack'].value=startDate
+        window.opener.document.forms['form1']['txtMaxNoParticipantFeedBack'].value=maxParticipant
+        window.opener.document.forms['form1']['txtNMCTrainersFeedBack'].value=TRAINER1
+        window.opener.document.forms['form1']['txtCourseLevelFeedBack'].value=CourseLevel
+         
+        window.close();
+        return false;
+            
+        }
+        
+              
+        }
+     function PopupPage(id)
+         {
+            document.getElementById("txtAgency").focus();
+         
+         var type;
+         if (id=="1")
+         {
+              type = "../TravelAgency/TASR_Agency.aspx?Popup=T" ;
+   	            window.open(type,"aaTrainingAgency","height=600,width=900,top=30,left=20,scrollbars=1,status=1");	    
+          }
+         if (id=="2")
+         {
+          var strAgencyName=document.getElementById("txtAgency").value;
+          strAgencyName=strAgencyName.replace("&","%26")
+               type = "../TravelAgency/TASR_AgencyStaff.aspx?Popup=T&AgencyName="+strAgencyName ;
+   	            window.open(type,"aaTrainingStaff","height=600,width=900,top=30,left=20,scrollbars=1,status=1");	 
+         }
+    
+         if (id=="3")
+         {
+               
+               type = "../Training/TRSR_TrainingRooms.aspx?Popup=T";
+   	            window.open(type,"aaTrainingRoom","height=600,width=900,top=30,left=20,scrollbars=1,status=1");           
+          }
+          
+          
+    
+           
+     }
+    
+  
+    
+    
+    </script>
+</head>
+<body onload="return GroupWholeChk();">
+    <form id="form1" runat="server"   defaultfocus="txtAgency" defaultbutton="btnSearch">
+    <div>
+     <table>
+    <tr>
+    <td>
+    <table width="860px"  class="border_rightred left">
+            <tr>
+                <td class="top">
+                    <table width="100%" class="left">
+                        <tr>
+                            <td   >
+                            <span class="menu"> Training -&gt;</span><span class="sub_menu">Monthly Training Report</span></td>
+                        </tr>
+                        <tr>
+                            <td class="heading center" >
+                                Monthly Training Report</td>
+                        </tr>
+                        <tr>
+                            <td >
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td class="redborder center">
+                                    <table border="0" cellpadding="2" cellspacing="1" style="width: 100%" class="left">
+                                                                        <tr>
+                                                                            <td class="center gap" colspan="6"  >
+                                                                <asp:Label ID="lblError" runat="server" CssClass="ErrorMsg" EnableViewState="False"></asp:Label></td>
+                                                                        </tr>
+                                        <tr>
+                                            <td>
+                                            </td>
+                                            <td class="textbold">
+                                                Agency</td>
+                                            <td colspan="3">
+                                                <asp:TextBox ID="txtAgency" runat="server" CssClass="textbox" MaxLength="50" TabIndex="2"
+                                                    Width="515px"></asp:TextBox>
+                                                <img id="Img2" runat="server" alt="Select & Add Agency Name" onclick="PopupPage(1)"
+                                                    src="../Images/lookup.gif" style="cursor:pointer;" /></td>
+                                            <td class="left" style="width: 12%">
+                                            <asp:Button ID="btnSearch" CssClass="button" runat="server" Text="Display" TabIndex="3" AccessKey="d" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                            </td>
+                                            <td class="textbold">
+                                            </td>
+                                            <td colspan="3">
+                                             <asp:CheckBox ID="chkWholeG" runat="server" CssClass="textbox" Text="Whole Group"
+                                                    Width="160px" TabIndex="2" /></td>
+                                            <td class="left" style="width: 12%">
+                                               <asp:Button ID="btnReset" CssClass="button" runat="server" Text="Reset" TabIndex="3" AccessKey="r" /></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                </td>
+                                            <td class="textbold"> Course</td>                                                                               
+                                            <td colspan="3">
+                                             <asp:DropDownList ID="ddlCourse" runat="server" CssClass="dropdownlist" Width="524px" TabIndex="2" onkeyup="gotop(this.id)">
+                                                    
+                                             </asp:DropDownList>
+                                            </td>
+                                            <td style="width: 12%;" class="left">
+                                               </td>
+                                        </tr>
+                                          <tr>
+                                            <td>
+                                            </td>
+                                            <td class="textbold">
+                                                Location</td>
+                                            <td colspan="3">
+                                                <asp:TextBox ID="txtTrainingRoom" runat="server" CssClass="textbox" MaxLength="50" TabIndex="2"
+                                                    Width="517px"></asp:TextBox>
+                                                <img id="Img1" runat="server" alt="Select & Add Training Room" onclick="PopupPage(3)"
+                                                    src="../Images/lookup.gif" style="cursor:pointer;" /></td>
+                                            <td class="left">
+                                               </td>
+                                        </tr>
+                                         <tr>
+                                            <td>
+                                            </td>
+                                            <td class="textbold">
+                                                Agency Staff</td>
+                                            <td colspan="3">
+                                                <asp:TextBox ID="txtAgencyStaff" runat="server" CssClass="textbox" 
+                                                    TabIndex="2" Width="517px" MaxLength="50"></asp:TextBox>
+                                                <img id="Img3" runat="server" alt="Select & Add Agency Staff" onclick="PopupPage(2)"
+                                                    src="../Images/lookup.gif" style="cursor:pointer;" /></td>
+                                            <td class="left">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                            </td>
+                                            <td class="textbold">
+                                                Agency Type</td>
+                                            <td colspan="3">
+                                                <asp:DropDownList ID="drpAgencyType" runat="server" CssClass="dropdownlist" onkeyup="gotop(this.id)"
+                                                    Style="position: relative" TabIndex="2" Width="176px">
+                                                </asp:DropDownList></td>
+                                            <td class="left">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                            </td>
+                                            <td class="textbold">
+                                                Trainer 1</td>
+                                            <td><asp:TextBox ID="txtTrainer1" runat="server" CssClass="textbox" MaxLength="40" TabIndex="2"
+                                                    Width="170px"></asp:TextBox>  <IMG style="CURSOR: pointer" id="Img4" onclick="PopupPageTrainerForTraining(1,'txtTrainer1')" 
+alt="Select & Add Employee" src="../Images/lookup.gif" runat="server" />
+                                                </td>
+                                            <td class="textbold">
+                                                Trainer 2</td>
+                                            <td><asp:TextBox ID="txtTrainer2" runat="server" CssClass="textbox" MaxLength="40" TabIndex="2"
+                                                    Width="170px"></asp:TextBox>  <IMG style="CURSOR: pointer" id="Img5" onclick="PopupPageTrainerForTraining(1,'txtTrainer2')" 
+alt="Select & Add Employee" src="../Images/lookup.gif" runat="server" />
+                                                </td>
+                                            <td class="left">
+                                               </td>
+                                        </tr>
+                                      
+                                        <tr>
+                                            <td>
+                                            </td>
+                                            <td class="textbold">
+                                                AOffice</td>
+                                            <td>
+                                                <asp:DropDownList ID="ddlAOffice" runat="server" CssClass="dropdownlist" Width="176px" TabIndex="2" onkeyup="gotop(this.id)">
+                                                   
+                                                   
+                                                </asp:DropDownList></td>
+                                            <td class="textbold">
+                                                Region</td>
+                                            <td>
+                                                <asp:DropDownList ID="ddlRegion" runat="server" CssClass="dropdownlist" Width="176px" TabIndex="2" onkeyup="gotop(this.id)">
+                                                  
+                                                 
+                                                </asp:DropDownList></td>
+                                            <td class="left">
+                                            </td>
+                                        </tr>
+                                      
+                                          <tr>
+                                            <td>
+                                            </td>
+                                            <td class="textbold">
+                                                &nbsp;<asp:DropDownList ID="ddlDateType" runat="server" CssClass="dropdownlist" onkeyup="gotop(this.id)"
+                                                    TabIndex="2" Width="90px">
+                                                   
+                                                    <asp:ListItem Text="Start Date" Value="1"></asp:ListItem>
+                                                    <asp:ListItem Text="End Date" Value="2"></asp:ListItem>
+                                                </asp:DropDownList></td>
+                                            <td class="textbold">
+                                                From&nbsp; &nbsp;<asp:TextBox ID="txtStartDateFrom" runat="server" CssClass="textbox" Width="132px" TabIndex="2" MaxLength="10"></asp:TextBox>
+                                                <img id="imgStartDateFrom" alt="" TabIndex="10" src="../Images/calender.gif"  title="Date selector" style="cursor: pointer" />
+                                                <script type="text/javascript">
+                                                  Calendar.setup({
+                                                  inputField     :    '<%=txtStartDateFrom.clientId%>',
+                                                  ifFormat       :    "%d/%m/%Y",
+                                                  button         :    "imgStartDateFrom",
+                                                 //align          :    "Tl",
+                                                  singleClick    :    true
+                                                 
+                                                               });
+                                            </script></td>
+                                            <td class="textbold">
+                                                To
+                                            </td>
+                                            <td>
+                                                <asp:TextBox ID="txtStartDateTo" runat="server" CssClass="textbox" Width="169px" TabIndex="2" MaxLength="10"></asp:TextBox>
+                                                <img id="imgStartDateTo" alt="" TabIndex="12" src="../Images/calender.gif"  title="Date selector" style="cursor: pointer" />
+                                                <script type="text/javascript">
+                                                  Calendar.setup({
+                                                  inputField     :    '<%=txtStartDateTo.clientId%>',
+                                                  ifFormat       :    "%d/%m/%Y",
+                                                  button         :    "imgStartDateTo",
+                                                 //align          :    "Tl",
+                                                  singleClick    :    true
+                                                
+                                                               });
+                                            </script>
+                                                </td>
+                                            <td class="left">
+                                               </td>
+                                        </tr>
+                                        <tr>
+                                            <td ></td>
+                                            <td >       </td>    <td  colspan="4">
+                                                &nbsp;<input id="hdDeleteId" runat="server" style="width: 1px" type="hidden" enableviewstate="true"/>
+                                               
+                                                <asp:HiddenField ID="hdCourseLCode" runat ="server" />
+                                                <asp:HiddenField ID="hdRoomID" runat ="server" />
+                                                <asp:HiddenField ID="hdCourseStaff" runat ="server" />
+                                                <asp:HiddenField ID="hdChkGroupWhole" runat ="server" />
+                                                <asp:HiddenField ID="hdtxtAgencyName" runat ="server" />
+                                                <input type="hidden" id="hdEmployeePageName" style="width:1px" runat='server' />
+                                                </td>
+                                        </tr>
+                                                                        <tr>
+                                                                            <td colspan="6" >
+                                                                               
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+                                                   </td>
+    </tr>
+    <tr><td class="top border_rightred">
+<table >
+
+<tr>
+</tr></table>
+</td></tr>
+</table>
+
+    </div>
+    </form>
+    
+     <script language="javascript" type="text/javascript">
+    function ValidateForm()
+    {
+      document.getElementById('<%=lblError.ClientId%>').innerText=''
+     
+        //      Checking txtOpenDateFrom .
+        if(document.getElementById('<%=txtStartDateFrom.ClientId%>').value != '')
+        {
+        if (isDate(document.getElementById('<%=txtStartDateFrom.ClientId%>').value,"d/M/yyyy") == false)	
+        {
+           document.getElementById('<%=lblError.ClientId%>').innerText = "Date from is not valid.";			
+	       document.getElementById('<%=txtStartDateFrom.ClientId%>').focus();
+	       return(false);  
+        }
+        } 
+         //      Checking txtOpenDateTo .
+        if(document.getElementById('<%=txtStartDateTo.ClientId%>').value != '')
+        {
+        if (isDate(document.getElementById('<%=txtStartDateTo.ClientId%>').value,"d/M/yyyy") == false)	
+        {
+           document.getElementById('<%=lblError.ClientId%>').innerText = "Date to is not valid.";			
+	       document.getElementById('<%=txtStartDateTo.ClientId%>').focus();
+	       return(false);  
+        }
+        } 
+         //      Checking txtCloseDateFrom .
+      /*  if(document.getElementById('<=txtEndDateFrom.ClientId>').value != '')
+        {
+        if (isDate(document.getElementById('<=txtEndDateFrom.ClientId>').value,"d/M/yyyy") == false)	
+        {
+           document.getElementById('<%=lblError.ClientId%>').innerText = "End date from is not valid.";			
+	       document.getElementById('<=txtEndDateFrom.ClientId>').focus();
+	       return(false);  
+        }
+        } 
+         //      Checking txtCloseDateTo .
+     if(document.getElementById('<=txtEndDateTo.ClientId>').value != '')
+        {
+        if (isDate(document.getElementById('<=txtEndDateTo.ClientId>').value,"d/M/yyyy") == false)	
+        {
+           document.getElementById('<%=lblError.ClientId%>').innerText = "End date to is not valid.";			
+	       document.getElementById('<=txtEndDateTo.ClientId>').focus();
+	       return(false);  
+        }
+        } 
+         */
+         
+        
+        
+        //    compareDates(dateOpen,dateformat1,dateAssignee,dateformat2) {
+       if (document.getElementById('<%=txtStartDateFrom.ClientId%>').value != '' && document.getElementById('<%=txtStartDateTo.ClientId%>').value != '')
+        { 
+           if (compareDates(document.getElementById('<%=txtStartDateFrom.ClientId%>').value,"d/M/yyyy",document.getElementById('<%=txtStartDateTo.ClientId%>').value,"d/M/yyyy")==1)
+               {
+                    document.getElementById('<%=lblError.ClientId%>').innerText ='Date to should be greater than or equal to date from.'
+                    return false;
+               }
+        }
+       
+    /*   if (document.getElementById('<=txtEndDateFrom.ClientId>').value != '' && document.getElementById('<=txtEndDateTo.ClientId>').value != '')
+        {
+            if (compareDates(document.getElementById('<=txtEndDateFrom.ClientId>').value,"d/M/yyyy",document.getElementById('<=txtEndDateTo.ClientId>').value,"d/M/yyyy")==1)
+           {
+                document.getElementById('<%=lblError.ClientId%>').innerText ='End date to should be greater than or equal to end date from.'
+                return false;
+           }
+        }*/
+       return true; 
+        
+    
+    
+    }
+    
+   
+ 
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "http://localhost/AAMS/", "http://localhost/AAMS", "{A32BA9E3-1A76-40DC-ACA6-554EB35F096E}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = ""$/AAMS/Interface/AAMS", JTGEAAAA"
+		SccAuxPath = ""
+		SccLocalPath = "."
+		SccProvider = "MSSCCI:Microsoft Visual SourceSafe"
+		ProjectReferences = ""
+		Debug.AspNetCompiler.VirtualPath = "/AAMS"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\inetpub\wwwroot\AAMS\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\AAMS\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/AAMS"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\inetpub\wwwroot\AAMS\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\AAMS\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\..\..\..\..\..\inetpub\wwwroot\AAMS\"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccLocalPath0 = .
+		SccWebProject1 = true
+		SccProjectUniqueName1 = http://localhost/AAMS
+		SccLocalPath1 = .
+		SccProjectEnlistmentChoice1 = 2
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Release|.NET = Release|.NET
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A32BA9E3-1A76-40DC-ACA6-554EB35F096E}.Debug|.NET.ActiveCfg = Debug|.NET
+		{A32BA9E3-1A76-40DC-ACA6-554EB35F096E}.Debug|.NET.Build.0 = Debug|.NET
+		{A32BA9E3-1A76-40DC-ACA6-554EB35F096E}.Debug|Any CPU.ActiveCfg = Debug|.NET
+		{A32BA9E3-1A76-40DC-ACA6-554EB35F096E}.Debug|Mixed Platforms.ActiveCfg = Debug|.NET
+		{A32BA9E3-1A76-40DC-ACA6-554EB35F096E}.Release|.NET.ActiveCfg = Debug|.NET
+		{A32BA9E3-1A76-40DC-ACA6-554EB35F096E}.Release|.NET.Build.0 = Debug|.NET
+		{A32BA9E3-1A76-40DC-ACA6-554EB35F096E}.Release|Any CPU.ActiveCfg = Debug|.NET
+		{A32BA9E3-1A76-40DC-ACA6-554EB35F096E}.Release|Mixed Platforms.ActiveCfg = Debug|.NET
+		{A32BA9E3-1A76-40DC-ACA6-554EB35F096E}.Release|Mixed Platforms.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

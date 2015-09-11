@@ -1,0 +1,49 @@
+D:\Neeraj\component\bizWay\obj\Release\ResolveAssemblyReference.cache
+D:\Neeraj\component\bizWay\obj\Release\bizWay.vbproj.GenerateResource.Cache
+D:\Neeraj\component\bizWay\obj\Release\WAY.Resources.resources
+D:\Neeraj\component\bizWay\obj\Release\WAY.NeerajTest.resources
+D:\Neeraj\component\bizWay\bin\bizUtility.dll
+D:\Neeraj\component\bizWay\obj\Debug\ResolveAssemblyReference.cache
+D:\Neeraj\component\bizWay\obj\Debug\WAY.Resources.resources
+D:\Neeraj\component\bizWay\obj\Debug\WAY.NeerajTest.resources
+D:\Neeraj\component\bizWay\obj\Debug\bizWay.vbproj.GenerateResource.Cache
+D:\Neeraj\component\bizWay\bin\bizWay.pdb
+D:\Neeraj\component\bizWay\bin\bizWay.xml
+D:\Neeraj\component\bizWay\obj\Release\bizWay.dll
+D:\Neeraj\component\bizWay\obj\Release\bizWay.xml
+D:\Neeraj\component\bizWay\obj\Release\bizWay.pdb
+D:\Neeraj\component\bizWay\obj\Debug\bizWay.xml
+D:\Neeraj\component\bizWay\obj\Debug\bizWay.pdb
+D:\AAMS Component\Components\bizWay\obj\Debug\bizWay.xml
+D:\AAMS Component\Components\bizWay\obj\Debug\bizWay.pdb
+D:\AAMS Component\Components\bizWay\bin\bizWay.pdb
+D:\AAMS Component\Components\bizWay\bin\bizWay.xml
+D:\AAMS Component\Components\bizWay\obj\Debug\ResolveAssemblyReference.cache
+D:\AAMS Component\Components\bizWay\obj\Debug\WAY.Resources.resources
+D:\AAMS Component\Components\bizWay\obj\Debug\WAY.NeerajTest.resources
+D:\AAMS Component\Components\bizWay\obj\Debug\bizWay.vbproj.GenerateResource.Cache
+C:\Documents and Settings\Administrator\Desktop\wAY\bizWay\obj\Debug\bizWay.exe
+C:\Documents and Settings\Administrator\Desktop\wAY\bizWay\obj\Debug\bizWay.xml
+C:\Documents and Settings\Administrator\Desktop\wAY\bizWay\obj\Debug\bizWay.pdb
+C:\Documents and Settings\Administrator\Desktop\wAY\bizWay\bin\bizWay.pdb
+C:\Documents and Settings\Administrator\Desktop\wAY\bizWay\bin\bizWay.xml
+C:\Documents and Settings\Administrator\Desktop\wAY\bizWay\bin\bizUtility.dll
+C:\Documents and Settings\Administrator\Desktop\wAY\bizWay\obj\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\Desktop\wAY\bizWay\obj\Release\WAY.Resources.resources
+C:\Documents and Settings\Administrator\Desktop\wAY\bizWay\obj\Release\WAY.NeerajTest.resources
+C:\Documents and Settings\Administrator\Desktop\wAY\bizWay\obj\Release\bizWay.vbproj.GenerateResource.Cache
+C:\Documents and Settings\Administrator\Desktop\wAY\bizWay\obj\Release\bizWay.dll
+C:\Documents and Settings\Administrator\Desktop\wAY\bizWay\obj\Release\bizWay.xml
+C:\Documents and Settings\Administrator\Desktop\wAY\bizWay\obj\Release\bizWay.pdb
+C:\Documents and Settings\Administrator\Desktop\wAY\bizWay\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\Desktop\wAY\bizWay\obj\Debug\WAY.Resources.resources
+C:\Documents and Settings\Administrator\Desktop\wAY\bizWay\obj\Debug\WAY.NeerajTest.resources
+C:\Documents and Settings\Administrator\Desktop\wAY\bizWay\obj\Debug\bizWay.vbproj.GenerateResource.Cache
+C:\Documents and Settings\Administrator\Desktop\wAY\bizWay\bin\bizWay.dll.config
+C:\Documents and Settings\Administrator\Desktop\wAY\bizWay\bin\bizWay.dll
+D:\AAMS Component\Components\bizWay\bin\bizWay.dll.config
+D:\AAMS Component\Components\bizWay\bin\bizWay.dll
+D:\AAMS Component\Components\bizWay\obj\Debug\bizWay.dll
+D:\Neeraj\component\bizWay\bin\bizWay.dll.config
+D:\Neeraj\component\bizWay\bin\bizWay.dll
+D:\Neeraj\component\bizWay\obj\Debug\bizWay.dll

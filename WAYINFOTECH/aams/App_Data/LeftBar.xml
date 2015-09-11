@@ -1,0 +1,384 @@
+<MENU>
+
+	<HEADING ID='1' NAME='Session'>
+		<Item ID='1' NAME='Change Password'  LINK='Setup/MSSR_ChangePassword.aspx' />
+	</HEADING>
+
+	<HEADING ID='2' NAME='Setup'>
+		<Item ID='1' NAME='Airline'  LINK='Setup/MSSR_ManageAirLine.aspx' />
+		<Item ID='2' NAME='Airline Office'  LINK='Setup/MSSR_AirLineOffice.aspx' />
+		<Item ID='3' NAME='Aoffice'  LINK='Setup/MSSR_Aoffice.aspx' />
+		<Item ID='4' NAME='City'  LINK='Setup/MSSR_CitySearch.aspx' />
+		<Item ID='5' NAME='Country'  LINK='Setup/MSSR_Country.aspx' />		
+		<Item ID='6' NAME='Department'  LINK='Setup/MSSR_Department.aspx' />
+		<Item ID='7' NAME='Designation'  LINK='Setup/MSSR_Designation.aspx' />
+		<Item ID='8' NAME='Employee'  LINK='Setup/MSSR_Employee.aspx' />
+		<Item ID='9' NAME='IP Pool'  LINK='Setup/MSSR_IPPool.aspx' />
+		<Item ID='10' NAME='Region'  LINK='Setup/MSSR_Region.aspx' />
+		<Item ID='11' NAME='Security Region'  LINK='Setup/MSSR_SecurityRegion.aspx' />
+		<Item ID='12' NAME='State'  LINK='Setup/MSSR_STATE.ASPX' />
+		<Item ID='13' NAME='Employee List'  LINK='Setup/MSRPT_Employee.ASPX' />
+		
+	</HEADING>
+
+	<HEADING ID='3' NAME='Travel Agency'>
+		<Item ID='1' NAME='Agency Group'  LINK='Setup/MSSR_ManageAgencyGroup.aspx' />
+		<Item ID='2' NAME='Agency' LINK='TravelAgency/TASR_Agency.aspx' />
+		<Item ID='3' NAME='IATA Status' LINK='TravelAgency/TASR_AgencyPriority.aspx' />
+		<Item ID='4' NAME='Agency Status' LINK='TravelAgency/TASR_AgencyStatus.aspx' />
+		<Item ID='5' NAME='Agency Type' LINK='TravelAgency/TASR_AgencyType.aspx' />
+		<Item ID='6' NAME='Corporate Codes' LINK='TravelAgency/MSSR_CorporateCode.aspx' />
+		<Item ID='7' NAME='Email Group' LINK='TravelAgency/MSSR_MailGroup.aspx' />
+		<Item ID='8' NAME='Online Status' LINK='TravelAgency/TASR_OnlineStatus.aspx' />
+		<Item ID='9' NAME='Order Status' LINK='TravelAgency/MSSR_OrderStatus.aspx' />
+		<Item ID='10' NAME='Products Group' LINK='TravelAgency/MSSR_ProductGroup.aspx' />
+		<Item ID='11' NAME='Products' LINK='TravelAgency/MSSR_Product.aspx' />
+		<Item ID='12' NAME='Order Type Category' LINK='TravelAgency/MSSR_OrderTypeCategory.aspx' />
+		<Item ID='13' NAME='Order Type' LINK='TravelAgency/MSSR_OrderType.aspx' />
+		<Item ID='14' NAME='Order' LINK='TravelAgency/MSSR_Order.aspx' />
+		<Item ID='15' NAME='Staff' LINK='TravelAgency/TASR_AgencyStaff.aspx' />
+		<Item ID='16' NAME='Agency List' LINK='TravelAgency/TARPT_Agency.aspx' />
+		<Item ID='17' NAME='Office Id' LINK='TravelAgency/MSSR_AgencyOfficeId.aspx' />
+		<Item ID='18' NAME='Office Id Summary' LINK='TravelAgency/TARPT_OfficeID.aspx' />
+		
+		<Item ID='19' NAME='IP Provider' LINK='ISP/ISPSR_Provider.aspx' />
+		<Item ID='20' NAME='IP PoP' LINK='ISP/ISPSR_POP.aspx' />
+		<Item ID='21' NAME='IP Pool' LINK='ISP/ISPSR_IPPool.aspx' />
+		<Item ID='22' NAME='CRS' LINK='Setup/MSSR_CRS.aspx' />
+		<Item ID='23' NAME='Send Email' LINK='Training/TRUP_SendEmail.aspx'/>
+		<Item ID='24' NAME='Connection Category' LINK='Incentive/INCSR_ConnectionCategory.aspx' />
+		<Item ID='25' NAME='Update 1A Responsibility ' LINK='TravelAgency/MSSR_UpdateResponsiblility.aspx' />
+		<Item ID='26' NAME='Staff Designation' LINK='TravelAgency/TASR_AgencyStaffDesig.aspx' />
+
+	</HEADING>
+
+	<HEADING ID='4' NAME='ISP'>
+		<Item ID='1' NAME='ISP Provider' LINK='ISP/ISP_SRISPProvider.aspx' />
+		<Item ID='2' NAME='ISP' LINK='ISP/MSSR_ISP.aspx' />
+		<Item ID='3' NAME='ISP Plan ' LINK='ISP/MSSR_ISPPlan.aspx' />
+		<!-- 	<Item ID='4' NAME='ISP Plan Report' LINK='ISP/ISRPT_ISPPlan.aspx' /> -->
+		<Item ID='4' NAME='ISP Order' LINK='ISP/ISPSR_Order.aspx' />
+		<Item ID='5' NAME='ISP Order Status' LINK='ISP/ISPSR_OrderSatus.aspx' />
+		<Item ID='6' NAME='ISP Feasibility Status' LINK='ISP/ISPSR_FeasibilityStatus.aspx'/>
+		<Item ID='7' NAME='ISP Feasibility Request' LINK='ISP/ISPSR_Feasibility.aspx'/>
+		<!-- 
+		<Item ID='9' NAME='ISP Feasibility Report' LINK='ISP/ISPRPT_Feasibility.aspx'/> -->
+		<Item ID='8' NAME='ISP Order Report' LINK='ISP/ISPRPT_Order.aspx' />
+		<Item ID='9' NAME='ISP Payment Process' LINK='ISP/ISPSR_PaymentProceed.aspx' />
+		<Item ID='10' NAME='ISP Payment Received' LINK='ISP/ISPSR_PaymentReceived.aspx' />
+		<Item ID='11' NAME='ISP Pending Cancellation' LINK='ISP/ISPSR_PendingCancellation.aspx' />
+
+
+	</HEADING>
+
+	<HEADING ID='5' NAME='Help-Desk'>
+		<Item ID='1' NAME='BDR' LINK='HelpDesk/HDSR_BDR.aspx' />
+		<Item ID='2' NAME='Search Call' LINK='HelpDesk/HDSR_CallLog.aspx' />
+
+		<Item ID='3' NAME='Log Functional' LINK='HelpDesk/HDUP_CallLog.aspx?Action=I' />
+		<Item ID='4' NAME='Log Technical' LINK='HelpDesk/TCUP_Calllog.aspx?Action=I' />
+
+		<Item ID='5' NAME='Contact Type' LINK='HelpDesk/HDSR_ContactType.aspx' />
+		<Item ID='6' NAME='Coordinator' LINK='HelpDesk/HDSR_Coordinator.aspx' />
+		<Item ID='7' NAME='Customer Category' LINK='HelpDesk/HDSR_CustomerCategory.aspx' />
+		<Item ID='8' NAME='Disposition' LINK='HelpDesk/HDSR_Disposition.aspx' />
+		<Item ID='9' NAME='Dynamic Report' LINK='HelpDesk/HDRPT_HelpDeskDynamicReport.aspx' />
+		<Item ID='10' NAME='Feedback Action' LINK='HelpDesk/HDSR_HelpDeskFeedback.aspx' />
+		<Item ID='11' NAME='Feedback Graph' LINK='HelpDesk/HDRPT_Feedback.aspx' />
+		<Item ID='12' NAME='Feedback Report' LINK='HelpDesk/HDSR_HelpDeskFeedBackReport.aspx' />
+		<Item ID='13' NAME='PTR' LINK='HelpDesk/HDSR_Ptr.aspx' />
+		<Item ID='14' NAME='PTR Assignee' LINK='HelpDesk/HDSR_PtrAssignee.aspx' />
+		<Item ID='15' NAME='PTR Follow-up' LINK='HelpDesk/HDSR_PtrFollowUp.aspx' />
+		<Item ID='16' NAME='PTR Priority' LINK='HelpDesk/HDSR_PtrSeverity.aspx' />
+		<Item ID='17' NAME='PTR Type' LINK='HelpDesk/HDSR_PTRType.aspx' />
+		<Item ID='18' NAME='PTR Type Category' LINK='HelpDesk/HDSR_PtrTypeCategory.aspx' />
+		<Item ID='19' NAME='PTR Status' LINK='HelpDesk/HDSR_PTRStatus.aspx' />
+
+		<Item ID='20' NAME='Fnc. Query Category' LINK='HelpDesk/HDSR_QueryCategory.aspx' />
+		<Item ID='21' NAME='Fnc. Query Priority' LINK='HelpDesk/HDSR_Priority.aspx' />
+		<Item ID='22' NAME='Fnc. Query Status' LINK='HelpDesk/HDSR_QueryStatus.aspx' />
+		<Item ID='23' NAME='Fnc. Query Sub-Ctg' LINK='HelpDesk/HDSR_QuerySubCategory.aspx' />
+		<Item ID='24' NAME='Fnc. Query Sub Group' LINK='HelpDesk/HDSR_QuerySubGroup.aspx' />
+		<Item ID='25' NAME='Team' LINK='HelpDesk/HDSR_Team.aspx' />
+		<Item ID='26' NAME='Tech. Query Category' LINK='HelpDesk/TCSR_QueryCategory.aspx' />
+		<Item ID='27' NAME='Tech. Query Priority' LINK='HelpDesk/TCSR_Priority.aspx' />
+		<Item ID='28' NAME='Tech. Query Status' LINK='HelpDesk/TCSR_QueryStatus.aspx' />
+		<Item ID='29' NAME='Tech. Query  Sub-Ctg' LINK='HelpDesk/TCSR_QuerySubCategory.aspx' />
+		<Item ID='30' NAME='Tech. Query Sub Group' LINK='HelpDesk/TCSR_QuerySubGroup.aspx' />
+		<Item ID='31' NAME='Work Order' LINK='HelpDesk/HDSR_WorkOrder.aspx' />
+		<Item ID='32' NAME='Work Order Assignee' LINK='HelpDesk/HDSR_WorkOrderAssignee.aspx' />
+		<Item ID='33' NAME='Work Order Follow-up' LINK='HelpDesk/HDSR_WorkOrderFollowUp.aspx' />
+		<Item ID='34' NAME='Work Order Priority' LINK='HelpDesk/HDSR_WorkOrderSeverity.aspx' />
+		<Item ID='35' NAME='Work Order Type' LINK='HelpDesk/HDSR_WorkOrderType.aspx' />
+		<Item ID='36' NAME='Question Set' LINK='HelpDesk/HDSR_QuestionSet.aspx' />
+		<Item ID='37' NAME='Technical Report' LINK='HelpDesk/HDRPT_TechnicalReport.aspx' />
+
+		<Item ID='38' NAME='IR' LINK='HelpDesk/HDSR_IR.aspx' />
+		<Item ID='39' NAME='IR Assignee' LINK='HelpDesk/HDSR_IRAssignee.aspx' />
+		<Item ID='40' NAME='IR Follow-up' LINK='HelpDesk/HDSR_IRFollowUp.aspx' />
+		<Item ID='41' NAME='IR Severity' LINK='HelpDesk/HDSR_IRSeverity.aspx' />
+		<Item ID='42' NAME='IR Type' LINK='HelpDesk/HDSR_IRType.aspx' />
+		<Item ID='43' NAME='IR Type Category' LINK='HelpDesk/HDSR_IRTypeCategory.aspx' />
+		<Item ID='44' NAME='IR Status' LINK='HelpDesk/HDSR_IRStatus.aspx' />
+
+	</HEADING>
+
+	<HEADING ID='6' NAME='Inventory'>
+		<Item ID='1' NAME='Godown' LINK='Inventory/INVSR_Godown.aspx' />
+		<Item ID='2' NAME='Supplier' LINK='Inventory/INVSR_Supplier.aspx' />
+		<Item ID='3' NAME='Purchase Order' LINK='Inventory/INVSR_PurchaseOrder.aspx' />
+		<Item ID='4' NAME='Challan' LINK='Inventory/INVSR_Challan.aspx' />
+		<Item ID='5' NAME='Stock Status' LINK='Inventory/INVSR_StockStatus.aspx' />
+		<Item ID='6' NAME='Challan Status' LINK='Inventory/INVSR_ChallanStatus.aspx' />
+		<Item ID='7' NAME='Inventory Reports' LINK='Inventory/INVRPT_Inventory.aspx' />
+		<Item ID='8' NAME='Warranty Status' LINK='Inventory/INVRpt_WarrantyStatus.aspx' />
+		<Item ID='9' NAME='Scrap' LINK='Inventory/INVSR_Scrap.aspx' />
+		<Item ID='10' NAME='Stock Transfer Tracking' LINK='Inventory/INVRPT_StockTransferTracking.aspx' />
+		<Item ID='11' NAME='Hardware Installation' LINK='Inventory/INVSR_HardwareInstallation.aspx' />
+		<Item ID='12' NAME='Equipment' LINK='Inventory/INVSR_Equipment.aspx' />
+		<Item ID='13' NAME='Flash Report' LINK='Market/MS_RPTFlash.aspx' />
+		<Item ID='14' NAME='Equipment Category' LINK='Inventory/INCSR_EquipmentCategory.aspx' />
+
+	</HEADING>
+
+	<HEADING ID='7' NAME='Productivity'>
+		<Item ID='1' NAME='Daily Booking' LINK='Productivity/PRDSR_DailyBookings.aspx' />
+
+		<Item ID='2' NAME='DailyBooking Airlinewise' LINK='Productivity/PRDSR_AirlineWise_Dailybooking.aspx' />
+
+		<Item ID='3' NAME='1A Productivity' LINK='Productivity/PRDSR_BIDT.aspx' />
+		<Item ID='4' NAME='All CRS(MIDT)' LINK='Productivity/PRDSR_AllCRS(MIDT).aspx' />
+		<!--<Item ID='4' NAME='All CRS(MIDT)' LINK='Productivity/PRDSR_MIDT.aspx' />-->
+		<Item ID='5' NAME='Group Productivity' LINK='Productivity/PRDSR_GroupProductivity.aspx' />
+		<Item ID='6' NAME='Travel Assistance Bkng' LINK='Productivity/PDSR_TravelAssistanceBooking.aspx' />
+		<Item ID='7' NAME='Country Wise Report' LINK='Productivity/PRDRPT_CountryWiseDailyBookingBudget.aspx' />
+		<Item ID='8' NAME='City Wise Report' LINK='Productivity/PRDRPT_DailyBookingCityWise.aspx' />
+		<Item ID='9' NAME='Region Wise Budget' LINK='Productivity/PRDSR_RegionWiseBudget.aspx' />
+		<Item ID='10' NAME='Country Wise Budget' LINK='Productivity/PRDSR_CountryWiseBudget.aspx' />
+		<Item ID='11' NAME='1A Ticket Booking' LINK='Productivity/PRDSR_TicketBooking.aspx' />
+
+	</HEADING>
+
+	<HEADING ID='8' NAME='Market'>
+		<Item ID='1' NAME='Airline Passive Report' LINK='Market/MTSRAirLine_PassiveReport.aspx' />
+		<Item ID='2' NAME='Airline Wise Mkt Share' LINK='Market/MTSR_AirLineWiseMktShare.aspx' />
+		<Item ID='3' NAME='TA Productivity' LINK='Market/MTSR_TaProductivity.aspx' />
+		<Item ID='4' NAME='Market Share Airline' LINK='Market/MTSR_MarketShare.aspx' />
+		<Item ID='5' NAME='City Average Terminal' LINK='Market/MTSR_CityAverageTerminal.aspx' />
+		<Item ID='6' NAME='City Productivity Cmpr' LINK='Market/MTSR_CityProductivityComparision.aspx' />
+		<Item ID='7' NAME='Airln Productivt Cmpr' LINK='Market/MTSRAirLine_ProductivityCompareReport.aspx' />
+		<Item ID='8' NAME='Market Share Report ' LINK='Market/MTSR_MarketShareAirline.aspx' />
+		<Item ID='9' NAME='Market Share' LINK='Market/MTSRNewMarketShare.aspx' />
+		<Item ID='10' NAME='Agency Airline Breakup' LINK='Market/MTRptAgencyAirlineBreakup.aspx' />
+		<Item ID='11' NAME='Country Manager Report' LINK='Market/MTSR_CountryManagerRpt.aspx' />
+
+	</HEADING>
+
+	<HEADING ID='9' NAME='Training'>
+		<Item ID='1' NAME='Course' LINK='Training/TRSR_Course.aspx' />
+		<Item ID='2' NAME='Course Session' LINK='Training/TRSR_CourseSession.aspx' />
+		<Item ID='3' NAME='Participant Basket' LINK='Training/TRSR_ParticipantBasket.aspx' />
+		<Item ID='4' NAME='Training Room' LINK='Training/TRSR_TrainingRooms.aspx' />
+		<Item ID='5' NAME='Feedback Domain' LINK='Training/TRSR_Domain.aspx' />
+		<Item ID='6' NAME='Feedback Topic' LINK='Training/TRSR_DomainTopics.aspx' />
+		<Item ID='7' NAME='Test Question' LINK='Training/SearchTest.aspx' />
+		<Item ID='8' NAME='FeedBack' LINK='Training/TRSR_FeedBack.aspx' />
+		<Item ID='9' NAME='Course Level' LINK='Training/TRSR_CourseLevel.aspx' />
+		<Item ID='10' NAME='FeedBack Status' LINK='Training/TRSR_FeedBackStatus.aspx' />
+		<Item ID='11' NAME='Participant Status' LINK='Training/TRSR_ParticipantStatus.aspx' />
+		<Item ID='12' NAME='Training Status' LINK='Training/TRSR_MailStatus.aspx' />
+		<Item ID='13' NAME='Staff Training' LINK='Training/MSSR_StaffTraining.aspx' />
+		<Item ID='14' NAME='1A Staff Training' LINK='Training/TRRPT_1AStaffTraining.aspx' />
+		<Item ID='15' NAME='Monthly Training' LINK='Training/TRRPT_MonthlyTraining.aspx' />
+		<Item ID='16' NAME='Pending Training' LINK='Training/TRRPT_PendingTraining.aspx' />
+		<Item ID='17' NAME='Request for Training' LINK='Training/TRRPT_RequestForTraining.aspx' />
+		<Item ID='18' NAME='Objective Monitoring' LINK='Training/TRRPT_TrainingObjectiveMonitoring.aspx' />
+		<Item ID='19' NAME='Room Performance' LINK='Training/TRRPT_TrainingRoomPerformance.aspx' />
+		<Item ID='20' NAME='Weekly Training' LINK='Training/TARPT_WeeklyTraining.aspx'/>
+		<Item ID='21' NAME='ReTraining' LINK='Training/TARPT_ReTaining.aspx'/>
+		<Item ID='22' NAME='TrainingOrderReport' LINK='Training/TRSR_Order.aspx'/>
+
+
+
+	</HEADING>
+
+	<HEADING ID='10' NAME='Sales'>
+		<Item ID='1' NAME='Sales Objective' LINK='Sales/SASR_GroupCategorySalesObjective.aspx' />
+		<Item ID='2' NAME='Agency Target' LINK='Sales/SASR_AgencyTarget.aspx' />
+		<Item ID='3' NAME='DSR Logging' LINK='Sales/SASR_DSRLogging.aspx' />
+		<Item ID='4' NAME='Account Management' LINK='Sales/SASR_DSRReport.aspx' />
+		<Item ID='5' NAME='Service Call Status' LINK='Sales/SASR_SRV_Call_Status.aspx' />
+		<Item ID='6' NAME='Retention Reason' LINK='Sales/SASR_RetentionReason.aspx' />
+		<Item ID='7' NAME='Retention Status' LINK='Sales/SASR_RetentionStatus.aspx' />
+		<Item ID='8' NAME='Target Status' LINK='Sales/SASR_TargetStatus.aspx' />
+		<Item ID='9' NAME='Air &amp; Non Air Prod Status' LINK='Sales/SASR_AIR_NONAIR_OTH_Status.aspx' />
+		<Item ID='10' NAME='DSR Action' LINK='Sales/SASR_DSRAction.aspx' />
+		<Item ID='11' NAME='Allow BackDated DSR' LINK='Sales/SASR_AllowBackDatedDSR.aspx' />
+		<Item ID='12' NAME='Business Department' LINK='Sales/SASR_BusinessDepartment.aspx' />
+	</HEADING>
+
+	<HEADING ID='11' NAME='Birdres Help-Desk'>
+		<Item ID='1' NAME='BDR' LINK='BirdresHelpDesk/HDSR_BDR.aspx' />
+		<Item ID='2' NAME='Search Call' LINK='BirdresHelpDesk/HDSR_CallLog.aspx' />
+
+		<Item ID='3' NAME='Log Functional' LINK='BirdresHelpDesk/HDUP_CallLog.aspx?Action=I' />
+		<Item ID='4' NAME='Log Technical' LINK='BirdresHelpDesk/TCUP_Calllog.aspx?Action=I' />
+
+		<Item ID='5' NAME='Contact Type' LINK='BirdresHelpDesk/HDSR_ContactType.aspx' />
+		<Item ID='6' NAME='Coordinator' LINK='BirdresHelpDesk/HDSR_Coordinator.aspx' />
+		<Item ID='7' NAME='Customer Category' LINK='BirdresHelpDesk/HDSR_CustomerCategory.aspx' />
+		<Item ID='8' NAME='Disposition' LINK='BirdresHelpDesk/HDSR_Disposition.aspx' />
+		<Item ID='9' NAME='Dynamic Report' LINK='BirdresHelpDesk/HDRPT_HelpDeskDynamicReport.aspx' />
+		<Item ID='10' NAME='Feedback Action' LINK='BirdresHelpDesk/HDSR_HelpDeskFeedback.aspx' />
+		<Item ID='11' NAME='Feedback Graph' LINK='BirdresHelpDesk/HDRPT_Feedback.aspx' />
+		<Item ID='12' NAME='Feedback Report' LINK='BirdresHelpDesk/HDSR_HelpDeskFeedBackReport.aspx' />
+		<Item ID='13' NAME='PTR' LINK='BirdresHelpDesk/HDSR_Ptr.aspx' />
+		<Item ID='14' NAME='PTR Assignee' LINK='BirdresHelpDesk/HDSR_PtrAssignee.aspx' />
+		<Item ID='15' NAME='PTR Follow-up' LINK='BirdresHelpDesk/HDSR_PtrFollowUp.aspx' />
+		<Item ID='16' NAME='PTR Priority' LINK='BirdresHelpDesk/HDSR_PtrSeverity.aspx' />
+		<Item ID='17' NAME='PTR Type' LINK='BirdresHelpDesk/HDSR_PTRType.aspx' />
+		<Item ID='18' NAME='PTR Type Category' LINK='BirdresHelpDesk/HDSR_PtrTypeCategory.aspx' />
+		<Item ID='19' NAME='Fnc. Query Category' LINK='BirdresHelpDesk/HDSR_QueryCategory.aspx' />
+		<Item ID='20' NAME='Fnc. Query Priority' LINK='BirdresHelpDesk/HDSR_Priority.aspx' />
+		<Item ID='21' NAME='Fnc. Query Status' LINK='BirdresHelpDesk/HDSR_QueryStatus.aspx' />
+		<Item ID='22' NAME='Fnc. Query Sub-Ctg' LINK='BirdresHelpDesk/HDSR_QuerySubCategory.aspx' />
+		<Item ID='23' NAME='Fnc. Query Sub Group' LINK='BirdresHelpDesk/HDSR_QuerySubGroup.aspx' />
+		<Item ID='24' NAME='Team' LINK='BirdresHelpDesk/HDSR_Team.aspx' />
+		<Item ID='25' NAME='Tech. Query Category' LINK='BirdresHelpDesk/TCSR_QueryCategory.aspx' />
+		<Item ID='26' NAME='Tech. Query Priority' LINK='BirdresHelpDesk/TCSR_Priority.aspx' />
+		<Item ID='27' NAME='Tech. Query Status' LINK='BirdresHelpDesk/TCSR_QueryStatus.aspx' />
+		<Item ID='28' NAME='Tech. Query  Sub-Ctg' LINK='BirdresHelpDesk/TCSR_QuerySubCategory.aspx' />
+		<Item ID='29' NAME='Tech. Query Sub Group' LINK='BirdresHelpDesk/TCSR_QuerySubGroup.aspx' />
+		<Item ID='30' NAME='Work Order' LINK='BirdresHelpDesk/HDSR_WorkOrder.aspx' />
+		<Item ID='31' NAME='Work Order Assignee' LINK='BirdresHelpDesk/HDSR_WorkOrderAssignee.aspx' />
+		<Item ID='32' NAME='Work Order Follow-up' LINK='BirdresHelpDesk/HDSR_WorkOrderFollowUp.aspx' />
+		<Item ID='33' NAME='Work Order Priority' LINK='BirdresHelpDesk/HDSR_WorkOrderSeverity.aspx' />
+		<Item ID='34' NAME='Work Order Type' LINK='BirdresHelpDesk/HDSR_WorkOrderType.aspx' />
+		<Item ID='35' NAME='Question Set' LINK='BirdresHelpDesk/HDSR_QuestionSet.aspx' />
+		<Item ID='36' NAME='Technical Report' LINK='BirdresHelpDesk/HDRPT_TechnicalReport.aspx' />
+
+	</HEADING>
+
+
+	<HEADING ID='12' NAME='ETracker Help-Desk'>
+		<Item ID='1' NAME='BDR' LINK='ECOMMTrackerHelpDesk/HDSR_BDR.aspx' />
+		<Item ID='2' NAME='Search Call' LINK='ECOMMTrackerHelpDesk/HDSR_CallLog.aspx' />
+
+		<Item ID='3' NAME='Log Functional' LINK='ECOMMTrackerHelpDesk/HDUP_CallLog.aspx?Action=I' />
+		<Item ID='4' NAME='Log Technical' LINK='ECOMMTrackerHelpDesk/TCUP_Calllog.aspx?Action=I' />
+
+		<Item ID='5' NAME='Contact Type' LINK='ECOMMTrackerHelpDesk/HDSR_ContactType.aspx' />
+		<Item ID='6' NAME='Coordinator' LINK='ECOMMTrackerHelpDesk/HDSR_Coordinator.aspx' />
+		<Item ID='7' NAME='Customer Category' LINK='ECOMMTrackerHelpDesk/HDSR_CustomerCategory.aspx' />
+		<Item ID='8' NAME='Disposition' LINK='ECOMMTrackerHelpDesk/HDSR_Disposition.aspx' />
+		<Item ID='9' NAME='Dynamic Report' LINK='ECOMMTrackerHelpDesk/HDRPT_HelpDeskDynamicReport.aspx' />
+		<Item ID='10' NAME='Feedback Action' LINK='ECOMMTrackerHelpDesk/HDSR_HelpDeskFeedback.aspx' />
+		<Item ID='11' NAME='Feedback Graph' LINK='ECOMMTrackerHelpDesk/HDRPT_Feedback.aspx' />
+		<Item ID='12' NAME='Feedback Report' LINK='ECOMMTrackerHelpDesk/HDSR_HelpDeskFeedBackReport.aspx' />
+		<Item ID='13' NAME='PTR' LINK='ECOMMTrackerHelpDesk/HDSR_Ptr.aspx' />
+		<Item ID='14' NAME='PTR Assignee' LINK='ECOMMTrackerHelpDesk/HDSR_PtrAssignee.aspx' />
+		<Item ID='15' NAME='PTR Follow-up' LINK='ECOMMTrackerHelpDesk/HDSR_PtrFollowUp.aspx' />
+		<Item ID='16' NAME='PTR Priority' LINK='ECOMMTrackerHelpDesk/HDSR_PtrSeverity.aspx' />
+		<Item ID='17' NAME='PTR Type' LINK='ECOMMTrackerHelpDesk/HDSR_PTRType.aspx' />
+		<Item ID='18' NAME='PTR Type Category' LINK='ECOMMTrackerHelpDesk/HDSR_PtrTypeCategory.aspx' />
+
+		<Item ID='19' NAME='PTR Status' LINK='ECOMMTrackerHelpDesk/HDSR_PTRStatus.aspx' />
+		<Item ID='20' NAME='Fnc. Query Category' LINK='ECOMMTrackerHelpDesk/HDSR_QueryCategory.aspx' />
+		<Item ID='21' NAME='Fnc. Query Priority' LINK='ECOMMTrackerHelpDesk/HDSR_Priority.aspx' />
+		<Item ID='22' NAME='Fnc. Query Status' LINK='ECOMMTrackerHelpDesk/HDSR_QueryStatus.aspx' />
+		<Item ID='23' NAME='Fnc. Query Sub-Ctg' LINK='ECOMMTrackerHelpDesk/HDSR_QuerySubCategory.aspx' />
+		<Item ID='24' NAME='Fnc. Query Sub Group' LINK='ECOMMTrackerHelpDesk/HDSR_QuerySubGroup.aspx' />
+		<Item ID='25' NAME='Team' LINK='ECOMMTrackerHelpDesk/HDSR_Team.aspx' />
+		<Item ID='26' NAME='Tech. Query Category' LINK='ECOMMTrackerHelpDesk/TCSR_QueryCategory.aspx' />
+		<Item ID='27' NAME='Tech. Query Priority' LINK='ECOMMTrackerHelpDesk/TCSR_Priority.aspx' />
+		<Item ID='28' NAME='Tech. Query Status' LINK='ECOMMTrackerHelpDesk/TCSR_QueryStatus.aspx' />
+		<Item ID='29' NAME='Tech. Query  Sub-Ctg' LINK='ECOMMTrackerHelpDesk/TCSR_QuerySubCategory.aspx' />
+		<Item ID='30' NAME='Tech. Query Sub Group' LINK='ECOMMTrackerHelpDesk/TCSR_QuerySubGroup.aspx' />
+		<Item ID='31' NAME='Work Order' LINK='ECOMMTrackerHelpDesk/HDSR_WorkOrder.aspx' />
+		<Item ID='32' NAME='Work Order Assignee' LINK='ECOMMTrackerHelpDesk/HDSR_WorkOrderAssignee.aspx' />
+		<Item ID='33' NAME='Work Order Follow-up' LINK='ECOMMTrackerHelpDesk/HDSR_WorkOrderFollowUp.aspx' />
+		<Item ID='34' NAME='Work Order Priority' LINK='ECOMMTrackerHelpDesk/HDSR_WorkOrderSeverity.aspx' />
+		<Item ID='35' NAME='Work Order Type' LINK='ECOMMTrackerHelpDesk/HDSR_WorkOrderType.aspx' />
+		<Item ID='36' NAME='Question Set' LINK='ECOMMTrackerHelpDesk/HDSR_QuestionSet.aspx' />
+		<Item ID='37' NAME='Technical Report' LINK='ECOMMTrackerHelpDesk/HDRPT_TechnicalReport.aspx' />
+
+		<Item ID='38' NAME='IR' LINK='ECOMMTrackerHelpDesk/HDSR_IR.aspx' />
+		<Item ID='39' NAME='IR Assignee' LINK='ECOMMTrackerHelpDesk/HDSR_IRAssignee.aspx' />
+		<Item ID='40' NAME='IR Follow-up' LINK='ECOMMTrackerHelpDesk/HDSR_IRFollowUp.aspx' />
+		<Item ID='41' NAME='IR Severity' LINK='ECOMMTrackerHelpDesk/HDSR_IRSeverity.aspx' />
+		<Item ID='42' NAME='IR Type' LINK='ECOMMTrackerHelpDesk/HDSR_IRType.aspx' />
+		<Item ID='43' NAME='IR Type Category' LINK='ECOMMTrackerHelpDesk/HDSR_IRTypeCategory.aspx' />
+		<Item ID='44' NAME='IR Status' LINK='ECOMMTrackerHelpDesk/HDSR_IRStatus.aspx' />
+
+	</HEADING>
+
+
+
+	<HEADING ID='13' NAME='BackOffice Help-desk'>
+		<Item ID='1' NAME='BDR' LINK='BackOfficeHelpdesk/BOHDSR_BDR.aspx' />
+		<Item ID='2' NAME='Search Call' LINK='BackOfficeHelpdesk/BOHDSR_CallLog.aspx' />
+
+		<Item ID='3' NAME='Log Functional' LINK='BackOfficeHelpdesk/BOHDUP_CallLog.aspx?Action=I' />
+		<Item ID='4' NAME='Log Technical' LINK='BackOfficeHelpdesk/BOTCUP_Calllog.aspx?Action=I' />
+
+		<Item ID='5' NAME='Contact Type' LINK='BackOfficeHelpdesk/BOHDSR_ContactType.aspx' />
+		<Item ID='6' NAME='Coordinator' LINK='BackOfficeHelpdesk/BOHDSR_Coordinator.aspx' />
+		<Item ID='7' NAME='Customer Category' LINK='BackOfficeHelpdesk/BOHDSR_CustomerCategory.aspx' />
+		<Item ID='8' NAME='Disposition' LINK='BackOfficeHelpdesk/BOHDSR_Disposition.aspx' />
+		<Item ID='9' NAME='Dynamic Report' LINK='BackOfficeHelpdesk/BOHDRPT_HelpDeskDynamicReport.aspx' />
+		<Item ID='10' NAME='Feedback Action' LINK='BackOfficeHelpdesk/BOHDSR_HelpDeskFeedback.aspx' />
+		<Item ID='11' NAME='Feedback Graph' LINK='BackOfficeHelpdesk/BOHDRPT_Feedback.aspx' />
+		<Item ID='12' NAME='Feedback Report' LINK='BackOfficeHelpdesk/BOHDSR_HelpDeskFeedBackReport.aspx' />
+		<Item ID='13' NAME='PTR' LINK='BackOfficeHelpdesk/BOHDSR_Ptr.aspx' />
+		<Item ID='14' NAME='PTR Assignee' LINK='BackOfficeHelpdesk/BOHDSR_PtrAssignee.aspx' />
+		<Item ID='15' NAME='PTR Follow-up' LINK='BackOfficeHelpdesk/BOHDSR_PtrFollowUp.aspx' />
+		<Item ID='16' NAME='PTR Priority' LINK='BackOfficeHelpdesk/BOHDSR_PtrSeverity.aspx' />
+		<Item ID='17' NAME='PTR Type' LINK='BackOfficeHelpdesk/BOHDSR_PTRType.aspx' />
+		<Item ID='18' NAME='PTR Type Category' LINK='BackOfficeHelpdesk/BOHDSR_PtrTypeCategory.aspx' />
+		<Item ID='19' NAME='PTR Status' LINK='BackOfficeHelpdesk/BOHDSR_PTRStatus.aspx' />
+		<Item ID='20' NAME='Fnc. Query Category' LINK='BackOfficeHelpdesk/BOHDSR_QueryCategory.aspx' />
+		<Item ID='21' NAME='Fnc. Query Priority' LINK='BackOfficeHelpdesk/BOHDSR_Priority.aspx' />
+		<Item ID='22' NAME='Fnc. Query Status' LINK='BackOfficeHelpdesk/BOHDSR_QueryStatus.aspx' />
+		<Item ID='23' NAME='Fnc. Query Sub-Ctg' LINK='BackOfficeHelpdesk/BOHDSR_QuerySubCategory.aspx' />
+		<Item ID='24' NAME='Fnc. Query Sub Group' LINK='BackOfficeHelpdesk/BOHDSR_QuerySubGroup.aspx' />
+		<Item ID='25' NAME='Team' LINK='BackOfficeHelpdesk/BOHDSR_Team.aspx' />
+		<Item ID='26' NAME='Tech. Query Category' LINK='BackOfficeHelpdesk/BOTCSR_QueryCategory.aspx' />
+		<Item ID='27' NAME='Tech. Query Priority' LINK='BackOfficeHelpdesk/BOTCSR_Priority.aspx' />
+		<Item ID='28' NAME='Tech. Query Status' LINK='BackOfficeHelpdesk/BOTCSR_QueryStatus.aspx' />
+		<Item ID='29' NAME='Tech. Query  Sub-Ctg' LINK='BackOfficeHelpdesk/BOTCSR_QuerySubCategory.aspx' />
+		<Item ID='30' NAME='Tech. Query Sub Group' LINK='BackOfficeHelpdesk/BOTCSR_QuerySubGroup.aspx' />
+		<Item ID='31' NAME='Work Order' LINK='BackOfficeHelpdesk/BOHDSR_WorkOrder.aspx' />
+		<Item ID='32' NAME='Work Order Assignee' LINK='BackOfficeHelpdesk/BOHDSR_WorkOrderAssignee.aspx' />
+		<Item ID='33' NAME='Work Order Follow-up' LINK='BackOfficeHelpdesk/BOHDSR_WorkOrderFollowUp.aspx' />
+		<Item ID='34' NAME='Work Order Priority' LINK='BackOfficeHelpdesk/BOHDSR_WorkOrderSeverity.aspx' />
+		<Item ID='35' NAME='Work Order Type' LINK='BackOfficeHelpdesk/BOHDSR_WorkOrderType.aspx' />
+		<Item ID='36' NAME='Question Set' LINK='BackOfficeHelpdesk/BOHDSR_QuestionSet.aspx' />
+		<Item ID='37' NAME='Technical Report' LINK='BackOfficeHelpdesk/BOHDRPT_TechnicalReport.aspx' />
+
+
+		<Item ID='38' NAME='IR' LINK='BackOfficeHelpdesk/BOHDSR_IR.aspx' />
+		<Item ID='39' NAME='IR Assignee' LINK='BackOfficeHelpdesk/BOHDSR_IRAssignee.aspx' />
+		<Item ID='40' NAME='IR Follow-up' LINK='BackOfficeHelpdesk/BOHDSR_IRFollowUp.aspx' />
+		<Item ID='41' NAME='IR Severity' LINK='BackOfficeHelpdesk/BOHDSR_IRSeverity.aspx' />
+		<Item ID='42' NAME='IR Type' LINK='BackOfficeHelpdesk/BOHDSR_IRType.aspx' />
+		<Item ID='43' NAME='IR Type Category' LINK='BackOfficeHelpdesk/BOHDSR_IRTypeCategory.aspx' />
+		<Item ID='44' NAME='IR Status' LINK='BackOfficeHelpdesk/BOHDSR_IRStatus.aspx' />
+
+	</HEADING>
+
+	<HEADING ID='14' NAME='Incentive'>
+		<Item ID='1' NAME='BC Approval Level' LINK='Incentive/INCSR_ApprovalLevel.aspx' />
+		<!--<Item ID='2' NAME='Equipment Category' LINK='Incentive/INCSR_EquipmentCategory.aspx' />
+		<Item ID='3' NAME='Connection Category' LINK='Incentive/INCSR_ConnectionCategory.aspx' />-->
+		<Item ID='2' NAME='Business Case' LINK='Incentive/INCSR_Bcase.aspx' />
+		<Item ID='3' NAME='BC Approval Queue' LINK='Incentive/INCSR_ApprovalQueue.aspx' />
+		<Item ID='4' NAME='Payment Approval Level' LINK='Incentive/INCSR_Pay_ApprovalLevel.aspx' />
+		<Item ID='5' NAME='Process Payment' LINK='Incentive/INCSR_PaymentProcess.aspx' />
+		<Item ID='6' NAME='Payment Appr. Queue' LINK='Incentive/INCSR_Pay_ApprovalQueue.aspx' />
+		<Item ID='7' NAME='Cheque Creation' LINK='Incentive/INCSR_Pay_PaymentReceived.aspx' />
+		<Item ID='8' NAME='Incentive Paid Report' LINK='Incentive/INCRPT_IncentivePaid.aspx' />
+		<Item ID='9' NAME='Volume Based Report' LINK='Incentive/INCRPT_VolumeBased.aspx' />
+	</HEADING>
+
+
+</MENU>

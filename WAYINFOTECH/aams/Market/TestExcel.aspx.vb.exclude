@@ -1,0 +1,139 @@
+Imports System.Data
+Imports System.Data.SqlClient
+Imports System.Xml
+Imports System.IO
+Imports System
+Imports Excel
+Imports AAMS.bizShared
+Partial Class Market_TestExcel
+    Inherits System.Web.UI.Page
+    Dim objeAAMS As New eAAMS
+    Dim objeAAMSMessage As New eAAMSMessage
+    Dim TotalPassivesum As Decimal = 0
+    Dim TotalActivesum As Decimal = 0
+    Dim TotalSegsum As Decimal = 0
+    Dim TotalPercentsum As Decimal = 0
+    Const strClass_NAME = "Market_MTSR_MarketShareAirline"
+    Protected Sub Button1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button1.Click
+        Dim objResultOutputXml As New XmlDocument
+        ExportinExcel(objResultOutputXml)
+    End Sub
+
+    Private Sub ExportinExcel(ByVal objResultOutputXml As XmlDocument)
+        Dim objInputXml, objOutputXml As New XmlDocument
+        Dim objSecurityXml As New XmlDocument
+        Dim objbzBIDT As New AAMS.bizProductivity.bzBIDT
+        Dim dS As New DataSet
+        Dim objXmlReader As XmlNodeReader
+        Dim objExWorkSheet As Excel.Worksheet
+        Dim objExApplication As New Excel.Application
+        Dim objExWorkBooks As Excel.Workbooks
+        Dim objExWorkBook As Excel.Workbook
+        '  Dim xlWorkBook As Excel.Workbook
+
+        Dim dtLTRDeistinct As System.Data.DataTable
+
+        Dim UserId As Integer = 0
+        Try
+            'objOutputXml.LoadXml(objResultOutputXml.OuterXml)
+            'If objOutputXml.DocumentElement.SelectSingleNode("Errors").Attributes("Status").Value.ToUpper = "FALSE" Then
+
+            objXmlReader = New XmlNodeReader(objOutputXml)
+            ' dS.ReadXml(objXmlReader)
+            Dim objTemplatePath As String
+            Dim rowCounter As Integer = 0
+            Dim rowCounterPosForImage As Integer = 0
+            Dim RowcounterIncrement As Integer
+
+            '************ End of  Declaration Section *******************************
+            'If Not Session("LoginSession") Is Nothing Then
+            '    UserId = Session("LoginSession").ToString().Split("|")(0)
+            'Else
+            '    lblError.Text = "Session is Exipred."
+            '    Exit Sub
+            'End If
+            'If File.Exists(Server.MapPath("~") + "\Template\" + "HDRepTechnicalReport" + UserId.ToString + ".xls") Then
+            '    File.Delete(Server.MapPath("~") + "\Template\" + "HDRepTechnicalReport" + UserId.ToString + ".xls")
+            'End If
+            objTemplatePath = "c:\Test.xls"
+
+
+
+            objExWorkBooks = objExApplication.Workbooks
+            objExWorkBook = objExWorkBooks.Open(objTemplatePath)
+            objExWorkSheet = objExApplication.ActiveSheet
+
+            rowCounter = 2
+
+
+            objExWorkSheet.Cells.Range("A" + rowCounter.ToString(), "AC" + (rowCounter + RowcounterForSoln - 2).ToString()).Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.LightBlue)
+
+            RowcounterIncrement = rowCounter
+            Dim RowcounterForSoln As Integer
+            RowcounterForSoln = 1
+            ' For soln
+
+            ' objExWorkSheet.Range("A3" + rowCounter.ToString(), "AC" + (rowCounter.ToString)).Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.LightPink)
+            '  objExWorkSheet.Range("A1", "AA" + (rowCounter.ToString)).Columns.AutoFit()
+            ' objExWorkSheet.Columns.AutoFit()
+            '    objExWorkSheet.Columns.WrapText = True
+
+            '   objExWorkSheet.Cells()
+
+
+            objTemplatePath = "c:\NewTest.xls"
+            objExWorkBook.SaveAs(objTemplatePath)
+            objExWorkBook.Close()
+            objExWorkBooks.Close()
+            objExApplication.Quit()
+
+            Dim filePath As String = objTemplatePath
+            Dim targetFile As System.IO.FileInfo = New System.IO.FileInfo(filePath)
+            If targetFile.Exists Then
+                Response.Clear()
+                Response.AddHeader("Content-Disposition", "attachment; filename=" + targetFile.Name)
+                Response.AddHeader("Content-Length", targetFile.Length.ToString)
+                Response.ContentType = "excel"
+                Response.WriteFile(targetFile.FullName)
+            End If
+            'End If
+        Catch ex As Exception
+            ' lblError.Text = ex.Message.ToString
+            'objExApplication.Workbooks.Close()
+        Finally
+            'objInputXml = Nothing
+            'objOutputXml = Nothing
+            'System.Runtime.InteropServices.Marshal.ReleaseComObject(objExApplication)
+            'objExWorkSheet = Nothing
+            'objExApplication = Nothing
+            'GC.Collect()
+            'GC.WaitForPendingFinalizers()
+            Try
+                objInputXml = Nothing
+                objOutputXml = Nothing
+                If objExWorkSheet IsNot Nothing Then
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(objExWorkSheet)
+                End If
+
+                If objExWorkBook IsNot Nothing Then
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(objExWorkBook)
+                End If
+                If objExWorkBooks IsNot Nothing Then
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(objExWorkBooks)
+                End If
+                If objExApplication IsNot Nothing Then
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(objExApplication)
+                End If
+                'System.Runtime.InteropServices.Marshal.ReleaseComObject(objExApplication)
+                objExWorkSheet = Nothing
+                objExWorkBook = Nothing
+                objExWorkBooks = Nothing
+                objExApplication = Nothing
+                GC.Collect()
+                'GC.WaitForPendingFinalizers()
+            Catch ex As Exception
+            End Try
+        End Try
+
+    End Sub
+End Class

@@ -1,0 +1,19 @@
+Imports System.Xml
+Imports Microsoft.VisualBasic
+
+Public Class AAMS
+    Protected Sub BindDropDown(ByVal drpDownList As DropDownList, ByVal strType As String, ByVal bolSelect As Boolean)
+        Dim objOutputXml As XmlDocument
+        Select Case strType
+            Case "CITY"
+                objOutputXml = New XmlDocument
+                objOutputXml.LoadXml("<MS_LISTCITY_OUTPUT><CITY CityID='1' CityCode='Del' City_Name='Delhi' /><Errors Status='False'><Error Code='' Description='' /></Errors></MS_LISTCITY_OUTPUT>")
+                If objOutputXml.DocumentElement.SelectSingleNode("Errors").Attributes("Status").Value.ToUpper = "FALSE" Then
+                    drpDownList.DataTextField = "City_Name"
+                    drpDownList.DataValueField = "CityID"
+                    drpDownList.DataBind()
+                End If
+
+        End Select
+    End Sub
+End Class

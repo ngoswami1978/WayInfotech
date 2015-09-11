@@ -1,0 +1,233 @@
+EQUIPMENT CAT
+
+1) SEARCH
+
+<INC_SEARCH_EQP_CAT_INPUT>
+	<BC_EQP_CATG_TYPE></BC_EQP_CATG_TYPE>
+	<SORT_BY></SORT_BY>
+	<DESC></DESC>
+	<PAGE_NO></PAGE_NO>
+	<PAGE_SIZE></PAGE_SIZE>
+</INC_SEARCH_EQP_CAT_INPUT>
+
+
+<INC_SEARCH_EQP_CAT_OUTPUT>
+	<EQP_CAT BC_EQP_CATG_ID='' BC_EQP_CATG_TYPE='' DESCRIPTION=''/>
+	<PAGE PAGE_COUNT='' TOTAL_ROWS=''/>
+	<Errors Status=''>
+		<Error Code='' Description='' />
+	</Errors>
+</INC_SEARCH_EQP_CAT_OUTPUT>
+
+-----------------------------------------------------
+2) LIST FOR NEW BUTTON
+
+<INC_LIST_EQP_CAT_OUTPUT>
+	<EQP_CAT PRODUCTID='' EQUIPMENT_CODE='' DESCRIPTION=''/>
+</INC_LIST_EQP_CAT_OUTPUT>
+
+----------------------------------------------------------
+
+
+3) UPDATE
+
+INPUT
+
+<INC_UPDATE_EQP_CAT_INPUT>
+	<EQP_CAT BC_EQP_CATG_ID='' BC_EQP_CATG_TYPE=''>
+		<PRODUCTID></PRODUCTID>
+	</EQP_CAT>
+</INC_UPDATE_EQP_CAT_INPUT>
+
+
+OUTPUT
+
+<INC_UPDATE_EQP_CAT_OUTPUT>
+	<EQP_CAT  BC_EQP_CATG_ID='' BC_EQP_CATG_TYPE=''>
+		<PRODUCTID></PRODUCTID>
+	</EQP_CAT>
+	<Errors Status=''>
+		<Error Code='' Description='' />
+	</Errors>
+</INC_UPDATE_EQP_CAT_OUTPUT>
+-------------------------------------------------------------
+
+4) DELETE
+
+INPUT
+
+<INC_DELETE_EQUP_CAT_INPUT>
+	<BC_EQP_CATG_ID></BC_EQP_CATG_ID>
+</INC_DELETE_EQUP_CAT_INPUT>
+
+
+OUTPUT
+
+<INC_DELETE_EQUP_CAT_OUTPUT>
+	<Errors Status=''>
+		<Error Code='' Description='' />
+	</Errors>
+</INC_DELETE_EQUP_CAT_OUTPUT>
+
+
+-----------------------------------------------------------
+5) VIEW
+
+INPUT
+
+<INC_VIEW_EQUP_CAT_INPUT>
+	<BC_EQP_CATG_ID></BC_EQP_CATG_ID>
+</INC_VIEW_EQUP_CAT_INPUT>
+
+
+OUTPUT
+
+<INC_VIEW_EQUP_CAT_OUTPUT>
+	<BC_EQP BC_EQP_CATG_ID='' BC_EQP_CATG_TYPE=''>
+		<PRODUCTID></PRODUCTID>
+		<DESCRIPTION></DESCRIPTION>
+	</BC_EQP>
+	<Errors Status=''>
+		<Error Code='' Description='' />
+	</Errors>
+</INC_VIEW_EQUP_CAT_OUTPUT>
+
+---------------------------------------------------------
+6)  HARWDARE LIST
+
+<INC_LIST_HARDWARE_OUTPUT>
+	<HARDWARE BC_EQP_CATG_ID='' BC_EQP_CATG_TYPE='' BC_EQP_CATG_COST='' />
+	<Errors Status=''>
+		<Error Code='' Description='' />
+	</Errors>
+</INC_LIST_HARDWARE_OUTPUT>
+
+-------------------------------------------------------------------------------------------------
+
+
+CONNECTION CATEG
+
+1) SERACH
+
+INPUT
+
+<INC_SEARCH_CONN_CAT_INPUT>
+	<BC_ONLINE_CATG_NAME></BC_ONLINE_CATG_NAME>
+	<SORT_BY></SORT_BY>
+	<DESC></DESC>
+	<PAGE_NO></PAGE_NO>
+	<PAGE_SIZE></PAGE_SIZE>
+</INC_SEARCH_CONN_CAT_INPUT>
+
+
+OUTPUT
+
+<INC_SEARCH_CONN_CAT_OUTPUT>
+	<CONN_CAT BC_ONLINE_CATG_ID='' BC_ONLINE_CATG_NAME='' />
+	<PAGE PAGE_COUNT='' TOTAL_ROWS=''/>
+	<Errors Status=''>
+		<Error Code='' Description='' />
+	</Errors>
+</INC_SEARCH_CONN_CAT_OUTPUT>
+
+---------------------------------------------------------
+2)  LIST FOR NEW BUTTON
+
+<INC_LIST_CONN_CAT_OUTPUT>
+	<CONN_CAT ONLINESTATUS='' STATUSCODE='' />
+</INC_LIST_CONN_CAT_OUTPUT>
+
+-----------------------------------------------------------
+3) UPDATE
+
+INPUT
+
+<INC_UPDATE_CONN_CAT_INPUT>
+	<CONN_CAT BC_ONLINE_CATG_ID='' BC_ONLINE_CATG_NAME=''>
+		<ONLINESTATUS></ONLINESTATUS>
+	</CONN_CAT>"
+</INC_UPDATE_CONN_CAT_INPUT>
+
+
+
+OUTPUT
+<INC_UPDATE_CONN_CAT_OUTPUT>
+	<CONN_CAT  BC_ONLINE_CATG_ID='' BC_ONLINE_CATG_NAME=''>
+		<ONLINESTATUS></ONLINESTATUS>
+	</CONN_CAT>
+	<Errors Status=''>
+		<Error Code='' Description='' />
+	</Errors>
+</INC_UPDATE_CONN_CAT_OUTPUT>
+---------------------------------------------------------------
+4) DELETE
+
+INPUT
+
+<INC_DELETE_CONN_CAT_INPUT>
+	<BC_ONLINE_CATG_ID></BC_ONLINE_CATG_ID>
+</INC_DELETE_CONN_CAT_INPUT>
+
+OUTPUT
+
+<INC_DELETE_CONN_CAT_OUTPUT>
+	<Errors Status=''>
+		<Error Code='' Description='' />
+	</Errors>
+</INC_DELETE_CONN_CAT_OUTPUT>
+
+--------------------------------------------------------------
+5) VIEW
+
+INPUT
+<INC_VIEW_CONN_CAT_INPUT>
+	<BC_ONLINE_CATG_ID></BC_ONLINE_CATG_ID>
+</INC_VIEW_CONN_CAT_INPUT>
+
+
+OUTPUT
+<INC_VIEW_CONN_CAT_OUTPUT>
+	<BC_CONN BC_ONLINE_CATG_ID='' BC_ONLINE_CATG_NAME=''>
+		<ONLINESTATUSCODE></ONLINESTATUSCODE>
+		<ONLINESTATUS></ONLINESTATUS>
+	</BC_CONN>
+	<Errors Status=''>
+		<Error Code='' Description='' />
+	</Errors>
+</INC_VIEW_CONN_CAT_OUTPUT>
+
+---------------------------------------------------------
+6) LIST OF CONNECTIVITY
+
+<INC_LIST_CONNECTIVITY_OUTPUT>
+	<CONNECTIVITY BC_ONLINE_CATG_ID='' BC_ONLINE_CATG_NAME='' BC_ONLINE_CATG_COST='' />
+	<Errors Status=''>
+		<Error Code='' Description='' />
+	</Errors>
+</INC_LIST_CONNECTIVITY_OUTPUT>
+
+
+
+-----------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

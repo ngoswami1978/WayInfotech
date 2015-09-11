@@ -1,0 +1,542 @@
+.modalBackground {
+	background-color:#434040;
+	filter:alpha(opacity=40);
+	opacity:0.7;
+}
+
+.line {
+	font-family: tahoma;
+	color: #e9e9e9;
+	font-size: 10px;
+}
+.Login_bottom {
+	font-family: tahoma;
+	font-size: 11px;
+	color: #ffffff;
+	font-weight: bold;
+	text-decoration:none;
+}
+
+.fare_MDIT_Detail
+{
+	 	background-color:#d2e5fe;
+		font-family:Verdana;
+		font-size:12px;
+		color:#026bb4;
+		border:1px solid #026bb4;
+	
+	}
+	
+	.txtcolor
+		{
+	color:#0066CC;
+	font-weight:700;
+	text-decoration:none;
+}
+
+
+	
+.linkTop {
+	font-family: tahoma;
+	font-size: 11px;
+	color: #ffffff;
+	font-weight: bold;
+	padding-right: 20px;
+	padding-bottom:8px;
+	padding-left: 20px;
+	text-decoration:none;
+}
+.border {
+	border-top-width: 1px;
+	border-right-width: 0px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #1a61a9;
+	border-right-color: #1a61a9;
+	border-bottom-color: #1a61a9;
+	border-left-color: #1a61a9;
+}
+
+.linkTop:hover {
+	text-decoration:underline;
+}
+
+.menu {
+	font-family: "trebuchet MS";
+	font-size: 12px;
+	color: #000;
+	padding-left:4px;
+	font-weight:bold;
+	text-decoration: none;
+}
+
+.sub_menu
+{
+	font-family: 'Microsoft Sans Serif';
+	font-size: 12px;
+	color: #000;
+	padding-left: 4px;
+	font-weight:300;
+	text-decoration: none;
+}
+
+.tdborder {
+	padding-bottom:3px;
+	padding-top:3px;
+	background-color:#e9e9e9
+}
+.tdborderspace {
+	border: 1px solid #CCCCCC;
+}
+.chkboxlist
+{
+font-size:10px;	
+font-weight:normal;
+}
+
+.heading
+{
+	font-family: "tahoma";
+	font-size: 12px;
+	font-weight: bold;
+	color: #fff;
+	background: #1A61A9;
+	height: 20px;
+}
+.subheading
+{
+	font-family: "tahoma";
+	font-size: 12px;
+	font-weight: bold;
+	color: #333333;
+	background: #dee7f7;
+	height: 10px;
+}
+.textbold
+{
+    font-family: Arial, Verdana;
+    font-size: 12px;
+    color: #000000;    
+    font-variant: normal;    
+}
+
+
+.textfield
+{
+	font-family: tahoma;
+	width:130px;
+	font-size: 8pt;
+}
+.textbox
+{
+    font-size: 11px;
+    font-family: verdana, Arial;
+    height: 10pt;
+}
+
+.dropdown
+{
+	font-family: tahoma;
+	width:137px;
+	font-size: 8pt;
+}
+.dropdownlist
+{
+    font-size: 11px;
+    font-family: verdana, Arial;
+}
+
+.ErrorMsg
+{
+	font-family: verdana;
+    font-size: 11px;
+    color: #9d0a0a;
+    text-decoration: none;    
+    font-weight: bold;
+}
+.Mandatory
+{
+	font-family: verdana;
+    font-size: 11px;
+    color: #DE2418;
+    text-decoration: none;
+    text-align: left;
+    font-weight: bold;
+}
+.button {
+	font-family: tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	background-color: #1a61a9;
+	color: #fff;
+	width: 75px;
+	height:22px;
+	border: 1px ridge #dee7f7;
+}
+.Gridheading {
+	font-family: "tahoma";
+	font-size: 12px;
+	font-weight: bold;
+	color: #fff;
+	background:#1A61A9;
+	padding-left:5px;
+	height :18px;
+}
+.GridheadingText {
+	color:White;
+}
+
+.bcHeading {
+	font-family: "tahoma";
+	font-size: 12px;
+	font-weight: bold;
+	color: #fff;
+	background:#1A61A9;
+	padding-left:0px;
+	height :18px;
+}
+
+.Gridheading a {text-decoration: none;}
+
+.lightblue
+{
+	font-family: Arial, Verdana;
+	font-size: 12px;
+	background:#dde7f2;
+	font-variant: normal;
+	height:18px;
+}
+.ItemColor
+{
+	font-family: Arial, Verdana;
+    font-size: 12px;
+    color: #000000;        
+    font-variant: normal;
+    height:18px;
+}
+
+.copyright, link {
+	font-family: tahoma;
+	font-size: 11px;
+	color:#fff;
+}
+.link {
+	text-decoration:none;
+	color:#fff
+}
+.redborder
+{
+	border: 1px solid #9d0a0a;
+	margin-left:7px;
+	margin-bottom:5px;
+}
+.headingtab
+{
+	font-family: tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	background-color: #1a61a9;
+	color: #fff;
+	width: 75px;
+	height:22px;
+	border-right: #9d0a0a 1px outset;
+	border-top: #9d0a0a 1px outset;
+	border-left: #9d0a0a 1px outset;
+	border-bottom: 1px outset;
+	
+	
+}
+.headingtabactive
+{
+	font-family: tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	background-color: #8cb0d4;
+	color: #fff;
+	width: 75px;
+	height: 22px;
+	border-right: #9d0a0a 1px outset;
+	border-top: #9d0a0a 1px outset;
+	border-left: #9d0a0a 1px outset;
+	border-bottom: 1px outset;
+}
+.tabspace
+{
+	margin-left:7px;
+}
+.gap
+{
+	height:8pt;
+}
+.smallgap
+{
+	height:2pt;
+}
+.clear
+{
+	clear:both;
+}
+.textboxgrey
+{
+    font-size: 11px;
+    font-family: verdana, Arial;
+    color: Black;
+    background-color: #d3d3d3;
+    border-right: #7f9db9 1px solid;
+    border-top: #7f9db9 1px solid;
+    border-left: #7f9db9 1px solid;
+    border-bottom: #7f9db9 1px solid;
+
+}
+.LinkButtons {
+	font-family: tahoma;
+	font-size: 11px;
+	color: #0a365c;
+	font-weight: bold;
+}
+
+.LinkButtonsWithoutUnderline {
+	font-family: tahoma;
+	font-size: 11px;
+	color: #0a365c;
+	font-weight: bold;
+	text-decoration:none;
+	
+		
+}
+.LinkButtonsWithoutUnderlineAndPointer {
+	font-family: tahoma;
+	font-size: 11px;
+	color: #0a365c;
+	font-weight: bold;
+	text-decoration:none;
+	cursor: none;
+		
+}
+
+.CollapseHeader {
+	font-family: tahoma;
+	font-size: 11px;
+	color: #0a365c;
+	font-weight: bold;
+	cursor:auto;
+}
+
+.LinkButtonsDisable
+{
+	font-family: tahoma;
+	font-size: 11px;
+	color: inactiveborder;
+	font-weight: bold;
+}
+.center
+{
+	text-align:center;
+}
+.left
+{
+	text-align:left;
+}
+.right
+{
+	text-align:right;
+}
+.top
+{
+	vertical-align:text-top;
+}
+.Top
+{
+	vertical-align:top;
+}
+.bold
+{
+	font-weight:bold;
+}
+.tree_menu
+{
+	font-family: Arial, Verdana;
+	color: #000000;
+	font-size :12px;
+	font-variant: normal;
+}
+.greyborder
+{
+	border: 1px solid #7f9db9;
+	margin-left:7px;	
+	margin-bottom:5px;
+}
+.topMargin
+{
+	margin-top:3pt;
+}
+.bottomMargin
+{
+	margin-bottom:3pt;
+}
+.displayNone 
+{
+	display:none;
+}
+.displayBlock
+{
+	display:block;
+}
+.paddingtop
+{
+padding-top : 4pt; 
+}
+
+.paddingbottom
+{
+padding-bottom : 4pt;
+
+}
+.TextTitleCase
+{
+	text-transform:capitalize;
+}
+
+.ScrollColor
+{
+scrollbar-face-color:white;
+scrollbar-arrow-color:white;
+scrollbar-base-color:white;
+scrollbar-shadow-color:white;
+scrollbar-darkshadow-color:white;
+scrollbar-highlight-color:white;
+scrollbar-3dlight-color:white;
+scrollbar-track-color:white;
+
+}
+
+.mainTable
+{
+	   table-layout: fixed;    
+}
+
+.mytable
+
+{
+
+    table-layout: fixed;    
+
+}
+.username{ padding:5px 5px 0 0; font-family:verdana; font-size:11px; color:#fff; text-align:right}
+
+.block{width:300px; float:right;padding:0px 5px 0 0; line-height:18px; display:block;font-family:verdana; font-size:11px; color:#fff; text-align:right}
+
+.mytable TD, .mytable TH
+
+{
+
+ 
+   /* border: solid 1px black;*/
+
+   /* width: 120px;*/
+
+}
+
+
+
+.mytable TH
+
+{
+
+   /* background-color: #e0e0e0;    */
+
+}
+.breakLongLine
+{
+white-space: normal; 
+word-wrap: break-word; 
+word-break: break-all;
+}
+
+
+.leftbarDiv
+{
+	width:159px;
+	vertical-align:top;
+	text-align:left;	
+}
+.leftbarDiv ul
+{
+	padding:0px;
+	margin:0px;
+}
+.leftbarDiv li
+{
+	line-height:15px;
+	padding-left: 10px;
+	margin-left: 10px;
+	background: url(../Images/ArrowNew.gif)  ;
+	background-repeat:no-repeat;
+	background-position:left bottom;
+	list-style:none;
+	
+}
+
+.moduleDivdown
+{
+	line-height:17px;
+	font-family:trebuchet MS;
+	font-size:12px;
+	font-weight:bold;
+	margin:2px;
+	padding-left:15px;
+	width: 159px;
+	cursor: pointer;
+	background: url(../Images/down.jpg);
+	background-repeat:no-repeat;
+	background-position:left;
+}
+.moduleDivup
+{
+	line-height:15px;
+	font-family:trebuchet MS;
+	font-size:12px;
+	font-weight:bold;
+	margin:2px;
+	padding-left:15px;
+	width: 159px;
+	cursor: pointer;
+	background: url(../Images/up.jpg);
+	background-repeat:no-repeat;
+	background-position:left;
+}
+
+.BCTopBorder
+{
+border: solid 1px #1A61A9;
+background-color: #dde7f2;
+border-top: 3px;
+}
+.autoPopulate
+{
+	font-size:11px;
+	font-family:verdana, Arial;
+	padding-left:5px;
+	margin-left:10px;
+	border:2px;
+	line-height:20px;
+	overflow-x:hidden; 
+	overflow-y:scroll;
+	height:200px;
+	
+	
+	
+}
+.searchBox 
+{
+	background-image:url('../Img/loading.gif');   
+	background-repeat:no-repeat;
+	background-position:right;
+	
+	
+	
+}

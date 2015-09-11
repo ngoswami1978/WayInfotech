@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{03EA724C-D4C6-4086-ADE0-E82FAF53389A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>AAMS</RootNamespace>
+    <AssemblyName>bizTravelAgency</AssemblyName>
+    <MyType>Windows</MyType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>bizTravelAgency.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>bizTravelAgency.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="bizBarcode, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="bizInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="bizShared, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="bizUtility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="bzAgency1ARespChange.vb" />
+    <Compile Include="bzAgencyCompetition.vb" />
+    <Compile Include="bzAgencyNotes.vb" />
+    <Compile Include="bzAgencyPriority.vb" />
+    <Compile Include="bzAgencyProduct.vb" />
+    <Compile Include="bzAgencyStaff.vb" />
+    <Compile Include="bzAgencyStatus.vb" />
+    <Compile Include="bzAgencyTarget.vb" />
+    <Compile Include="bzAgencyType.vb" />
+    <Compile Include="bzAgency.vb" />
+    <Compile Include="bzCorporateCodes.vb" />
+    <Compile Include="bzAgencyCRSUse.vb" />
+    <Compile Include="bzPCDeInstallation.vb" />
+    <Compile Include="bzMiscInstallation.vb" />
+    <Compile Include="bzOfficeID.vb" />
+    <Compile Include="bzOnlineStatus.vb" />
+    <Compile Include="bzOrder.vb" />
+    <Compile Include="bzOrderCategory.vb" />
+    <Compile Include="bzOrderStatus.vb" />
+    <Compile Include="bzOrderType.vb" />
+    <Compile Include="bzOS.vb" />
+    <Compile Include="bzPCInstallation.vb" />
+    <Compile Include="bzPCReplacement.vb" />
+    <Compile Include="bzProduct.vb" />
+    <Compile Include="bzProductGroup.vb" />
+    <Compile Include="bzStaffDesignation.vb" />
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmManoj.Designer.vb">
+      <DependentUpon>FrmManoj.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmManoj.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTapan.Designer.vb">
+      <DependentUpon>frmTapan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTapan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="frmNeeraj.Designer.vb">
+      <DependentUpon>frmNeeraj.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmNeeraj.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmManoj.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmManoj.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNeeraj.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmNeeraj.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTapan.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmTapan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\bizBarcode.dll" />
+    <Content Include="bin\bizInterface.dll" />
+    <Content Include="bin\bizShared.dll" />
+    <Content Include="bin\bizUtility.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

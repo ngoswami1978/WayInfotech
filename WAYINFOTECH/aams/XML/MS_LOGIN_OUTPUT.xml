@@ -1,0 +1,22 @@
+<MS_LOGIN_OUTPUT>
+	<Administrator></Administrator>
+	<EmployeeID></EmployeeID>
+	<Login></Login>
+	<Employee_Name></Employee_Name>
+	<Aoffice></Aoffice>
+	<DepartmentID></DepartmentID>
+	<Designation></Designation>
+	<Limited_To_OwnAgency></Limited_To_OwnAgency>
+	<Limited_To_Aoffice></Limited_To_Aoffice>
+	<Limited_To_Region></Limited_To_Region>
+	<SecurityRegionID></SecurityRegionID>
+	<ManagerID></ManagerID>
+	<ImmediateSupervisorID></ImmediateSupervisorID>
+	<FirstForm></FirstForm>
+	<SECURITY_OPTIONS>
+		<SECURITY_OPTION SecurityOptionID="" SecurityOptionSubName="" Value="" />
+	</SECURITY_OPTIONS>
+	<Errors Status="FALSE">
+		<Error Code="" Description="" />
+	</Errors>
+</MS_LOGIN_OUTPUT>
